@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "147222924817",
+    "project_id": "lmsstudentproject",
+    "storage_bucket": "lmsstudentproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147222924817:android:48ee943325081530046bb0",
+        "android_client_info": {
+          "package_name": "com.balajiarunyoho.LmsProject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP6T2i4MatJydT0_0LoLX756nEYAsVqw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
