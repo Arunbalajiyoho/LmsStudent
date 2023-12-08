@@ -1,13 +1,15 @@
 // App.js
-
+// import from react
 import React from 'react';
+import { useEffect } from "react";
+// import from react native
 import { NavigationContainer } from '@react-navigation/native';
 import Navigation from './src/navigation';
+// import from context
 import { StateContextProvider } from './src/context';
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Alert } from "react-native";
 import messaging from "@react-native-firebase/messaging";
-import { useEffect } from "react";
 import { android } from "@react-native-firebase/messaging";
 
 

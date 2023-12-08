@@ -1,4 +1,6 @@
+// import from react
 import React from "react";
+// import from react native
 import {
   View,
   Text,
@@ -7,18 +9,25 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { SIZES, FONTS, COLORS } from "../../constants/theme";
-import { useStateContext } from "../../context/StateContext/StateContext";
 import { SafeAreaView } from "react-native-safe-area-context";
+// import from constants
+import { SIZES, FONTS, COLORS } from "../../constants/theme";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
+// import from expo
 import { MaterialIcons, Ionicons, Entypo, Feather } from "@expo/vector-icons";
-
+// import from components
 import ImageSwiper from "../../components/ImageSwiper ";
 
 const DashBoardScreen = () => {
-  const { colors } = useStateContext();
 
+  // for using colors from context
+  const { colors } = useStateContext();
+ 
+// for image 
   const user = require("../../../assets/images/Arunbalaji.jpg");
 
+  // styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,

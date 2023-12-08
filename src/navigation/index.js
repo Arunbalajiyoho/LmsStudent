@@ -59,6 +59,7 @@ const Navigation = () => {
     >
      
    {/* <Stack.Screen name="BottomTabs" component={BottomTabs} /> */}
+       <Stack.Screen name="LogInScreen" component={LogInScreen} />
        <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} />
        <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
        <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen} />
@@ -95,8 +96,8 @@ const Navigation = () => {
        <Stack.Screen name="PendingTicketsScreen" component={PendingTicketsScreen} />
        <Stack.Screen name="CompletedTicketsScreen" component={CompletedTicketsScreen} />
        <Stack.Screen name="LoadingScreen" component={LoadingScreen} />    
-      <Stack.Screen name="HelpScreen" component={HelpScreen} />
-       <Stack.Screen name="LogInScreen" component={LogInScreen} />
+       <Stack.Screen name="HelpScreen" component={HelpScreen} />
+       
        <Stack.Screen name="ForgetPasswordScreen" component={ForgetPasswordScreen} />
        <Stack.Screen name="OtpVerificationScreen" component={OtpVerificationScreen} />
        <Stack.Screen name="SetNewPasswordScreen" component={SetNewPasswordScreen} />

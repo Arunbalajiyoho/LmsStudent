@@ -1,4 +1,6 @@
+// import from react
 import React from "react";
+// import from react native
 import {
   View,
   Text,
@@ -8,16 +10,24 @@ import {
   ScrollViewBase,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+// import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
+// import from constants
 import { SIZES, FONTS, COLORS } from "../../constants/theme";
-import { FontAwesome5, MaterialIcons, FontAwesome,Entypo  } from "@expo/vector-icons";
+// import from components
 import TopTabs from "../../components/TopTabs";
+// import from expo
+import { FontAwesome5, MaterialIcons, FontAwesome,Entypo  } from "@expo/vector-icons";
+
 
 
 
 const HelpScreen = () => {
+  // for colors
   const { colors } = useStateContext();
 
+
+  // styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
