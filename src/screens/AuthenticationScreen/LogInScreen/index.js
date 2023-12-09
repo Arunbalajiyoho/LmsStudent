@@ -9,6 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
   TextInput,
+  ImageBackground,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -18,27 +19,62 @@ import { SIZES, FONTS, COLORS } from "../../../constants";
 import { useStateContext } from "../../../context/StateContext/StateContext";
 // import from expo
 import Checkbox from "expo-checkbox";
-import { MaterialIcons, Ionicons, Entypo, Feather } from "@expo/vector-icons";
+// import from expo vector icons
+import {
+  MaterialIcons,
+  Ionicons,
+  Entypo,
+  Feather,
+  FontAwesome,
+} from "@expo/vector-icons";
 
-const LogInScreen = () => {
+// import from screens.
+import ForgetPasswordScreen from "../ForgetPasswordScreen";
+
+const LogInScreen = ({ navigation }) => {
   const { colors } = useStateContext();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword((prev) => !prev);
+  const handleLogin = () => {
+    // Clear previous error messages
+    setEmailError("");
+    setPasswordError("");
+
+    // Validate email
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setEmailError("Invalid email address");
+    }
+
+    // Validate password
+    if (!password || password.length < 6) {
+      setPasswordError("Password must be at least 6 characters");
+    }
+
+    // Check if any errors exist
+    if (emailError || passwordError) {
+      // Handle the case where there are validation errors
+      console.log("Validation failed. Please check the form.");
+      return;
+    }
+
+    // Your login logic here (e.g., API call, authentication)
+    console.log("Logging in with:", { email, password });
   };
-  const toggleRememberMe = () => {
-    setRememberMe(!rememberMe);
+
+  const isFormEmpty = () => {
+    return !email || !password;
   };
-  function isEnableLogIn() {
-    return (
-      email != "" && password != ""
-      // emailError == "" &&
-    );
-  }
+
+  const getLoginButtonColor = () => {
+    return isFormEmpty() ? COLORS.lightblue : COLORS.purple;
+  };
+
+  // styles
 
   const styles = StyleSheet.create({
     grandParent: {
@@ -46,17 +82,20 @@ const LogInScreen = () => {
       justifyContent: "center",
       backgroundColor: colors.background,
       paddingHorizontal: SIZES.radius,
-      paddingVertical: SIZES.radius,
+      // paddingVertical: SIZES.radius,
     },
+
     title: {
       fontSize: SIZES.h1,
       fontWeight: "bold",
-      fontFamily:"",
+      fontFamily: "",
+      color:colors.textColor,
     },
 
     sign: {
       fontSize: SIZES.h3,
       fontWeight: "bold",
+      color:colors.textColor,
     },
     container: {
       marginVertical: SIZES.radius,
@@ -65,9 +104,12 @@ const LogInScreen = () => {
       flexDirection: "row",
       alignItems: "center",
       borderColor: "gray",
-      borderWidth: 1,
+      // borderWidth: 1,
       borderRadius: 25,
       padding: SIZES.radius,
+      height: 55,
+      marginTop: SIZES.base,
+      backgroundColor: COLORS.lightGray2,
     },
     input: {
       flex: 1,
@@ -76,128 +118,177 @@ const LogInScreen = () => {
     icon: {
       marginHorizontal: 10,
     },
+    errorText: {
+      color: "red",
+      // Add any necessary styling like fontSize, fontWeight, etc.
+    },
+    image:{
+    width:"100%",
+    height:250,
+    alignSelf:"center",
+    marginBottom:25,
+    
+    },
   });
 
   return (
-    <SafeAreaView style={styles.grandParent}>
-      <KeyboardAwareScrollView
-        keyboardDismissMode="on-drag"
-        contentContainerStyle={{
-          flex: 1,
-          justifyContent: "center",
-        }}
-      >
-        <View>
-          <Text style={styles.title}>Welcome</Text>
-          <Text style={styles.title}>Back</Text>
-        </View>
-
-        <View style={{paddingVertical:SIZES.radius}}> 
-        <Text style={styles.sign}>Hey! Good to see you again</Text>
-        </View>
-
-        <View style={styles.container}>
-          <View style={styles.inputContainer}>
-            <Ionicons name="mail" size={24} color="black" style={styles.icon} />
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your email"
-              value={email}
-              onChangeText={(text) => setEmail(text)}
-              autoCapitalize="none"
-              keyboardType="email-address"
-            />
-            <TouchableOpacity onPress={togglePasswordVisibility}>
-              <Ionicons
-                name={showPassword ? "eye-off" : "eye"}
-                size={24}
-                color="black"
-                style={styles.icon}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <View style={styles.container}>
-          <View style={styles.inputContainer}>
-            <Ionicons name="key" size={24} color="black" style={styles.icon} />
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your password"
-              value={password}
-              onChangeText={(text) => setPassword(text)}
-              secureTextEntry={!showPassword}
-            />
-            <TouchableOpacity onPress={togglePasswordVisibility}>
-              <Ionicons
-                name={showPassword ? "eye-off" : "eye"}
-                size={24}
-                color="black"
-                style={styles.icon}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: 1,
-            paddingVertical: SIZES.radius,
+   
+      <SafeAreaView style={styles.grandParent}>
+        <KeyboardAwareScrollView
+          keyboardDismissMode="on-drag"
+          contentContainerStyle={{
+            flex: 1,
+            justifyContent: "center",
           }}
         >
+
+            <View>
+              <Image src="https://i.pinimg.com/564x/67/0c/4c/670c4c0739772da3da9358550222baa2.jpg" style={styles.image}/>
+            </View>
+          <View>
+            <Text style={styles.title}>Welcome</Text>
+            <Text style={styles.title}>Back</Text>
+          </View>
+
+          <View style={{ paddingVertical: SIZES.radius }}>
+            <Text style={styles.sign}>Hey! Good to see you again</Text>
+          </View>
+
+          <View style={styles.container}>
+            <View style={styles.inputContainer}>
+              <Ionicons
+                name="mail"
+                size={24}
+                color="black"
+                style={styles.icon}
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Enter your email"
+                autoCapitalize="none"
+                keyboardType="email-address"
+                value={email}
+                onChangeText={(text) => {
+                  setEmail(text);
+                  setEmailError(""); // Clear email error when user starts typing
+                }}
+              />
+            </View>
+            {emailError ? (
+              <Text style={styles.errorText}>{emailError}</Text>
+            ) : null}
+          </View>
+
+          <View style={styles.container}>
+            <View style={styles.inputContainer}>
+              <Ionicons
+                name="key"
+                size={24}
+                color="black"
+                style={styles.icon}
+              />
+              <TextInput
+                style={styles.input}
+                placeholder="Enter your password"
+                secureTextEntry={!showPassword}
+                value={password}
+                onChangeText={(text) => {
+                  setPassword(text);
+                  setPasswordError(""); // Clear password error when user starts typing
+                }}
+              />
+              <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                <Ionicons
+                 name={showPassword ? "eye" : "eye-off"}
+                  size={24}
+                  color="black"
+                  style={styles.icon}
+                />
+              </TouchableOpacity>
+            </View>
+            {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
+          </View>
           <View
             style={{
               flexDirection: "row",
-              // paddingHorizontal: SIZES.radius,
+              alignItems: "center",
+              justifyContent: "space-between",
+              marginTop: 1,
               paddingVertical: SIZES.radius,
             }}
           >
-            <Checkbox value={rememberMe} onValueChange={toggleRememberMe} />
-            <Text
-              style={{ fontSize: SIZES.h4, paddingHorizontal: SIZES.radius }}
+            {/* <View
+              style={{
+                flexDirection: "row",
+                // paddingHorizontal: SIZES.radius,
+                paddingVertical: SIZES.radius,
+              }}
             >
-              Remember Me
-            </Text>
+              <Checkbox value={rememberMe} onValueChange={toggleRememberMe} />
+              <Text
+                style={{ fontSize: SIZES.h4, paddingHorizontal: SIZES.radius }}
+              >
+                Remember Me
+              </Text>
+            </View> */}
+
+            <View style={{flexDirection:"row",justifyContent:"flex-end",flex:1}}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate(ForgetPasswordScreen)}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    paddingLeft: 6,
+                    color: COLORS.purple,
+                  }}
+                >
+                  Forget Password
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
-          <View>
+        
+          <View style={{ alignItems: "center", marginTop: 30 }}>
             <TouchableOpacity
-              onPress={() => navigation.navigate(ForgetPasswordScreen)}
+              style={{
+                backgroundColor: getLoginButtonColor(),
+                height: 57,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 26,
+                paddingHorizontal: 20,
+              }}
+              onPress={handleLogin}
+              // disabled={!isEnableLogIn()}
             >
               <Text
                 style={{
+                 
                   fontWeight: "bold",
-                  paddingLeft: 6,
-                  color: COLORS.lightblue,
+                  flex: 1,
+                  textAlign: "center",
                 }}
               >
-                Forget Password
+                Log In
               </Text>
+              <View
+                style={{ backgroundColor: "white", borderRadius: 29, left: 10 }}
+              >
+                <Feather
+                  name="arrow-right"
+                  size={20}
+                  color={COLORS.purple}
+                  style={{ paddingHorizontal: 15, paddingVertical: 13 }}
+                />
+              </View>
             </TouchableOpacity>
           </View>
-        </View>
-
-        <View style={{ alignItems: "center", marginTop: 30 }}>
-          <TouchableOpacity
-            style={{
-              backgroundColor: colors.primary,
-              height: 50,
-              width: "100%",
-              alignItems: "center",
-              borderRadius: 20,
-              justifyContent: "center",
-            }}
-            // onPress={handleLogIn}
-            disabled={isEnableLogIn() ? false : true}
-          >
-            <Text style={{ color: "white", fontWeight: "bold" }}>Log In</Text>
-          </TouchableOpacity>
-        </View>
-      </KeyboardAwareScrollView>
-    </SafeAreaView>
+        </KeyboardAwareScrollView>
+      </SafeAreaView>
+   
   );
 };
 

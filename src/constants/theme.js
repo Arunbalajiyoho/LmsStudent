@@ -14,6 +14,7 @@ export const COLORS = {
   blue: "#0064C0",
   blue1:"#31D3D5",
   lightblue:"#ADD8E6",
+  purple:"#6E40FF",
   darkBlue: "#111A2C",
   darkGray: "#525C67",
   darkGray2: "#757D85",
