@@ -30,6 +30,7 @@ import {
 import OtpVerificationScreen from "../OtpVerificationScreen";
 
 const ForgetPasswordScreen = ({ navigation }) => {
+  // for using dummy data
   const data = [
     {
       id: 1,

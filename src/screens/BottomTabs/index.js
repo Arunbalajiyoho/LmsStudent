@@ -1,18 +1,21 @@
+// Import from React
+import React, { useEffect, useRef } from "react";
+// Import from react navigation Bottom Tabs
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { TouchableOpacity,Text} from "react-native";
-
+// import from react antive
+import { TouchableOpacity,Text,StyleSheet} from "react-native";
+// import from screens
 import DashBoardScreen from "../DashBoardScreen";
-
 import HelpScreen from "../HelpScreen";
-import { StyleSheet } from "react-native";
+// import from constants
 import Colors from "../../constants/Colors";
 import { COLORS } from "../../constants";
 import Icon, { Icons } from "../../constants/Icons";
+// import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
-
+// import from react native animatable
 import * as Animatable from "react-native-animatable";
      
-import React, { useEffect, useRef } from "react";
  
 const TabArr = [
     
@@ -55,6 +58,7 @@ const TabArr = [
   // { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: AccountScreen, color: Colors.primary, alphaClr: Colors.primaryAlpha },
 ];
 
+// for bottom navigator
 const Tab = createBottomTabNavigator();
 
 const TabButton = (props) => {
@@ -105,6 +109,7 @@ const styles = StyleSheet.create({
   },
 });
 
+// for tabs 
 const BottomTabs = ({ navigation }) => {
   const { colors, toggleDarkMode } = useStateContext();
 

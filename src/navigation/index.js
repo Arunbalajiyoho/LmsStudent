@@ -9,14 +9,18 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+// import from native stack
 import CreateNativeStackNavigator, {
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
+// import from screens
 import BottomTabs from "../screens/BottomTabs";
+// import from react navigation drawer
 import { createDrawerNavigator,DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
+// import from expo vector icons
 import { AntDesign, Entypo } from "@expo/vector-icons";
 
-   
+// import from Screens
 import {
   DashBoardScreen,
   ExamsScreen,
@@ -62,9 +66,12 @@ import {
   ProfileScreen,
 } from "../screens";
 
+// For Drawer Navigator
 const Drawer = createDrawerNavigator();
+// For Stack Navigator
 const Stack = createNativeStackNavigator();
 
+// Stack Navigator
 const StackNavigator = () => {
   
 
@@ -74,7 +81,7 @@ const StackNavigator = () => {
         headerShown: false,
       }}
     >
-       {/* <Stack.Screen name="BottomTabs" component={BottomTabs} /> */}
+        <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
        <Stack.Screen name="LogInScreen" component={LogInScreen} />
       <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
        <Stack.Screen name="HelpScreen" component={HelpScreen} />
@@ -121,7 +128,7 @@ const StackNavigator = () => {
   );
 };
 
-
+// CustomDrawerContent
 
 const CustomDrawerContent = (props) => {
   const user = {
@@ -131,6 +138,7 @@ const CustomDrawerContent = (props) => {
   };
 
 
+  // For using Styles
   const styles = StyleSheet.create({
     drawerHeader: {
       flexDirection: "row",
@@ -152,6 +160,7 @@ const CustomDrawerContent = (props) => {
       color: "gray",
     },
   });
+
   return (
     <DrawerContentScrollView {...props}>
     <View style={styles.drawerHeader}>
@@ -197,6 +206,7 @@ const CustomDrawerContent = (props) => {
 };
 
 
+// For Navigation 
 const DrawerNavigator = () => {
 
   
@@ -271,7 +281,7 @@ const DrawerNavigator = () => {
   );
 };
 
-
+// Navigation
 const Navigation = () => {
   return (
     <DrawerNavigator />

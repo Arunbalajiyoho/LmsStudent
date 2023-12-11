@@ -1,13 +1,17 @@
-// CompletedExamScreen.js
+//import from react 
 import React from 'react';
+// import from react native
 import { View, Text, StyleSheet, Button } from 'react-native';
+// import from dummy data
 import { dummyData } from '../../components/dummyData';
+// import from context
 import { useStateContext } from '../../context/StateContext/StateContext';
- // Assuming you have a library that provides a Card component
+ 
 
 const CompletedExamScreen = ({ navigation }) => {
-  
+  // state for dark mode
   const { colors } = useStateContext();
+  // for using styles
   const styles = StyleSheet.create({
     container: {
       // flex: 1,
@@ -32,6 +36,8 @@ const CompletedExamScreen = ({ navigation }) => {
       marginBottom: 10,
     },
   });
+
+  
   return (
  
     <View style={styles.container}>

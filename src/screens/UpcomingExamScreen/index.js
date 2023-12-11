@@ -9,16 +9,22 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+// import from react native safe area context
 import { SafeAreaView } from "react-native-safe-area-context";
+// import from constants
 import { SIZES, COLORS } from "../../constants/theme";
+// import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
+// import from dummy data
 import { dummyData } from "../../components/dummyData";
 
 const UpcomingExamScreen = ({navigation}) => {
+
+  // state for dark mode
   const { colors } = useStateContext();
 
 
-  
+  // for using styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
@@ -50,6 +56,8 @@ const UpcomingExamScreen = ({navigation}) => {
     },
   
   });
+
+  
   return (
     <SafeAreaView style={styles.grandParent}>
       

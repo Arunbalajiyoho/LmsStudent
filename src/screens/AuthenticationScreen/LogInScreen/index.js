@@ -33,15 +33,19 @@ import ForgetPasswordScreen from "../ForgetPasswordScreen";
 
 const LogInScreen = ({ navigation }) => {
 
+  //  for store the image
   const Logo = require("../../../../assets/images/logo.jpg");
+  // for using colors
   const { colors } = useStateContext();
-
+// states for email
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
+  // states for password
+  const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  // for handle login
   const handleLogin = () => {
     // Clear previous error messages
     setEmailError("");

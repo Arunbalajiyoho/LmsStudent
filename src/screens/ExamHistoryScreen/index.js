@@ -1,13 +1,17 @@
-// Exam History Screen.js
+// import from react
 import React from 'react';
+// import from react native
 import { View, Text, StyleSheet, FlatList } from 'react-native';
+// import from context
 import { useStateContext } from '../../context/StateContext/StateContext'; 
+// import from dummy data
 import { dummyData } from '../../components/dummyData';
 
 const ExamHistoryScreen = () => {
-  // Sample exam history data, replace with your actual data
-  
+ 
+  // state for dark mode
   const { colors } = useStateContext();
+  // for using styles
   const styles = StyleSheet.create({
     container: {
       flex: 1,

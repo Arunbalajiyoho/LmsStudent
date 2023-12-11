@@ -23,7 +23,7 @@ import Colors from "../../constants/Colors";
 const ExamDetailedScreen = () => {
    // for colors
    const { colors, isDarkMode } = useStateContext();
-
+  // for using styles
    const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
@@ -129,11 +129,6 @@ const ExamDetailedScreen = () => {
   color:colors.textColor,
  }
    
-   
-  
-   
-   
-
    
   });
 

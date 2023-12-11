@@ -1,19 +1,30 @@
+// Import from react
 import React, { useState } from "react";
+// Importd from react native
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+// import from react native safe area context
 import { SafeAreaView } from "react-native-safe-area-context";
+// import from react native paper
 import { Button } from "react-native-paper";
+// import from vector icons
 import { FontAwesome5 } from "@expo/vector-icons";
+// import from constants
 import { SIZES, COLORS } from "../../constants/theme";
+import Colors from "../../constants/Colors";
+// import from screens
 import UpcomingExamScreen from "../UpcomingExamScreen";
 import CompletedExamScreen from "../CompletedExamScreen";
 import ExamHistoryScreen from "../ExamHistoryScreen";
+// import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
-import Colors from "../../constants/Colors";
 
 const ExamsScreen = ({ navigation }) => {
+  // state for darkmode
   const { colors } = useStateContext();
+  // state for tabs
   const [activeTab, setActiveTab] = useState("Upcoming Exams");
 
+  // function for rendering screens
   const renderScreen = () => {
     switch (activeTab) {
       case "Upcoming Exams":
@@ -27,6 +38,7 @@ const ExamsScreen = ({ navigation }) => {
     }
   };
 
+  // For using styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
