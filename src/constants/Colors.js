@@ -42,6 +42,6 @@ export default {
     bag7Bg: '#d1c8c3',
     bag8Bg: '#dca47f',
     bag9Bg: '#eb849c',
-    bag10Bg: '#979dc1',
+    bag10Bg: '#D9BFD9',
     bag11Bg: '#c7d3c0',
 }

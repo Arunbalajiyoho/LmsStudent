@@ -56,7 +56,7 @@ const TopTabs = () => {
               width: "40%",
               color:colors.textcolor,
               backgroundColor:
-                activeTab === "Tab1" ? COLORS.lightblue : "transparent",
+                activeTab === "Tab1" ?  COLORS.darkBlue : "transparent",
               elevation: activeTab === "Tab1" ? 4 : 0,
             }}
           >
@@ -68,7 +68,7 @@ const TopTabs = () => {
             style={{
               width: "40%",
               backgroundColor:
-                activeTab === "Tab2" ? COLORS.lightblue : "transparent",
+                activeTab === "Tab2" ?  COLORS.darkBlue : "transparent",
               elevation: activeTab === "Tab2" ? 4 : 0,
             }}
           >
@@ -103,7 +103,7 @@ const TopTabs = () => {
                     backgroundColor: colors.cardBackground,
                   }}
                 >
-                  <MaterialIcons name="headset-mic" size={24} color={Colors.lightblue} />
+                  <MaterialIcons name="headset-mic" size={24} color={  COLORS.darkBlue} />
                   <Text style={styles.logos}>Customer Service</Text>
                 </View>
               </TouchableOpacity>
@@ -121,7 +121,7 @@ const TopTabs = () => {
                     backgroundColor: colors.cardBackground,
                   }}
                 >
-                  <MaterialCommunityIcons name="web" size={24} color={Colors.lightblue}  />
+                  <MaterialCommunityIcons name="web" size={24} color={  COLORS.darkBlue}  />
                   <Text style={styles.logos}>Website</Text>
                 </View>
               </TouchableOpacity>
@@ -139,7 +139,7 @@ const TopTabs = () => {
                     backgroundColor: colors.cardBackground,
                   }}
                 >
-                  <FontAwesome name="whatsapp" size={24} color={Colors.lightblue}  />
+                  <FontAwesome name="whatsapp" size={24} color={  COLORS.darkBlue}  />
                   <Text style={styles.logos}>whatsapp</Text>
                 </View>
               </TouchableOpacity>
@@ -157,7 +157,7 @@ const TopTabs = () => {
                     backgroundColor: colors.cardBackground,
                   }}
                 >
-                  <Entypo name="facebook" size={24} color={Colors.lightblue}  />
+                  <Entypo name="facebook" size={24} color={  COLORS.darkBlue}  />
                   <Text style={styles.logos}>facebook </Text>
                 </View>
               </TouchableOpacity>
@@ -175,7 +175,7 @@ const TopTabs = () => {
                     backgroundColor: colors.cardBackground,
                   }}
                 >
-                  <AntDesign name="instagram" size={24} color={Colors.lightblue}  />
+                  <AntDesign name="instagram" size={24} color={  COLORS.darkBlue}  />
                   <Text style={styles.logos}>instagram </Text>
                 </View>
               </TouchableOpacity>

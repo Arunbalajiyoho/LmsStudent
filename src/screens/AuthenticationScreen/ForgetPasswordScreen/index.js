@@ -178,7 +178,7 @@ const ForgetPasswordScreen = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={styles.back}
         >
-          <Ionicons name="ios-arrow-back" size={24} color= {COLORS.purple} />
+          <Ionicons name="ios-arrow-back" size={24} color= {COLORS.darkBlue} />
         </TouchableOpacity>
 
         <View>
@@ -204,7 +204,7 @@ const ForgetPasswordScreen = ({ navigation }) => {
               <MaterialCommunityIcons
                 name="message-text-outline"
                 size={30}
-                color={COLORS.purple}
+                color={COLORS.darkBlue}
               />
             </View>
 
@@ -224,7 +224,7 @@ const ForgetPasswordScreen = ({ navigation }) => {
              onPress={handlenext}
              disabled={isEnableForget() ? false : true}
               style={{
-                backgroundColor: COLORS.purple,
+                backgroundColor: COLORS.darkBlue,
 
                 height: 57,
                 flexDirection: "row",
@@ -245,12 +245,12 @@ const ForgetPasswordScreen = ({ navigation }) => {
                 Continue
               </Text>
               <View
-                style={{ backgroundColor: "white", borderRadius: 29, left: 10 }}
+                style={{ backgroundColor: COLORS.blue1, borderRadius: 29, left: 10 }}
               >
                 <Feather
                   name="arrow-right"
                   size={20}
-                  color={COLORS.purple}
+                  color={COLORS.darkBlue}
                   style={{ paddingHorizontal: 15, paddingVertical: 13 }}
                 />
               </View>

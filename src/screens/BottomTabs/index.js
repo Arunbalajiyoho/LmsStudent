@@ -6,12 +6,12 @@ import DashBoardScreen from "../DashBoardScreen";
 import HelpScreen from "../HelpScreen";
 import { StyleSheet } from "react-native";
 import Colors from "../../constants/Colors";
-import { COLORS } from "../../constants/theme";
+import { COLORS } from "../../constants";
 import Icon, { Icons } from "../../constants/Icons";
 import { useStateContext } from "../../context/StateContext/StateContext";
 
 import * as Animatable from "react-native-animatable";
-
+     
 import React, { useEffect, useRef } from "react";
  
 const TabArr = [
@@ -22,8 +22,8 @@ const TabArr = [
     type: Icons.Feather,
     icon: "home",
     component: DashBoardScreen,
-    color: Colors.lightRed,
-    alphaClr: Colors.lightRed,
+    color: COLORS.darkBlue,
+    alphaClr:COLORS.darkBlue,
   },
     // {
     //   route: "Explore",
@@ -40,8 +40,8 @@ const TabArr = [
       type: Icons.Feather,
       icon: "help-circle",
       component: HelpScreen,
-      color: Colors.darkOverlayColor,
-      alphaClr: Colors.primaryAlpha,
+      color: COLORS.darkBlue,
+      alphaClr: COLORS.darkBlue,
     },
   //   {
   //     route: "ProfileScreen",
@@ -87,10 +87,10 @@ const TabButton = (props) => {
         <Icon
           type={item.type}
           name={item.icon}
-          color={focused ? Colors.bag3Bg : Colors.lightblue}
+          color={focused ?  COLORS.darkBlue : Colors.lightblue}
         />
       </Animatable.View>
-      <Text style={{ color: focused ? Colors.primary : Colors.lightblue }}>
+      <Text style={{ color: focused ?  COLORS.darkBlue : Colors.lightblue }}>
         {item.label}
       </Text>
     </TouchableOpacity>
@@ -123,12 +123,12 @@ const BottomTabs = ({ navigation }) => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          height: 50,
+          height: 55,
           position: "absolute",
-          //   bottom: 16,
-          //   right: 16,
-          //   left: 16,
-          //   borderRadius: 16
+            // bottom: 16,
+            // right: 16,
+            // left: 16,
+            // borderRadius: 16
         },
       }}
     >

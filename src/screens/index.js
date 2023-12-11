@@ -43,6 +43,7 @@ import PendingTicketsScreen from "./PendingTicketsScreen";
 import CompletedTicketsScreen from "./CompletedTicketsScreen";
 import LoadingScreen from "./LoadingScreen";
 import HelpScreen from "./HelpScreen";
+import ProfileScreen from "./ProfileScreen";
 
 export {
   DashBoardScreen,
@@ -86,4 +87,5 @@ export {
   OtpVerificationScreen,
   ForgetPasswordScreen,
   SetNewPasswordScreen,
+  ProfileScreen,
 };

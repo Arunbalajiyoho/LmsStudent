@@ -1,5 +1,5 @@
 // import from react
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import from react native
 import {
   View,
@@ -9,22 +9,46 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
 // import from constants
 import { SIZES, FONTS, COLORS } from "../../constants/theme";
 // import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
 // import from expo
-import { MaterialIcons, Ionicons, Entypo, Feather } from "@expo/vector-icons";
+import {
+  MaterialIcons,
+  Ionicons,
+  Entypo,
+  Feather,
+  FontAwesome,
+  AntDesign,
+} from "@expo/vector-icons";
 // import from components
 import ImageSwiper from "../../components/ImageSwiper ";
+import Colors from "../../constants/Colors";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import MyCalendar from "../../components/MyCalendar";
 
-const DashBoardScreen = () => {
 
+const DashBoardScreen = ({ navigation }) => {
   // for using colors from context
   const { colors } = useStateContext();
- 
-// for image 
+
+  const { top } = useSafeAreaInsets();
+
+  const [fill, setFill] = useState(0);
+
+  const student = {
+    name: "ArunBalaji", // Replace with the actual name of the user
+    email: "Arun.doe@example.com", // Replace with the actual email of the user
+    image:
+      "https://cdn.pixabay.com/photo/2016/11/14/03/16/book-1822474_1280.jpg", // Replace with the actual URL of the user's image
+  };
+
+  // for image
   const user = require("../../../assets/images/Arunbalaji.jpg");
 
   // styles
@@ -32,172 +56,234 @@ const DashBoardScreen = () => {
     grandParent: {
       flex: 1,
       backgroundColor: colors.background,
-      // paddingHorizontal: SIZES.radius,
-      // paddingVertical: SIZES.radius * 2,
-    },
-    headericons: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignItems: "center",
+      paddingHorizontal: SIZES.radius,
+      paddingVertical: SIZES.radius,
+      
     },
     header: {
       flexDirection: "row",
-      justifyContent: "space-between",
       alignItems: "center",
-      marginTop: SIZES.radius,
     },
-    headertext: {
-      fontSize: SIZES.largeTitle,
+    name: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
+
+    userName: {
+      fontSize: 16,
       fontWeight: "bold",
+      marginLeft: SIZES.radius * 2,
       color: colors.textColor,
     },
-    headersubtext: {
+    userEmail: {
+      fontSize: 14,
+      color: "gray",
+      marginLeft: SIZES.radius * 2,
+      color: colors.textColor,
+    },
+    back: {
+      marginRight: SIZES.radius,
+      backgroundColor: colors.iconBackground,
+      padding: SIZES.base,
+      borderRadius: 10,
+    },
+    courses: {
+      backgroundColor: COLORS.blue1,
+      borderRadius: 10,
+      padding: SIZES.padding,
+      marginTop: SIZES.padding,
+      flex: 1,
+      height: 170,
+      alignItems: "center",
+      justifyContent: "center",
+      margin: SIZES.base,
+      borderBottomRightRadius: 40,
+    },
+    Exams: {
+      backgroundColor: "#EBEEFA",
+      borderRadius: 10,
+      padding: SIZES.padding,
+      marginTop: SIZES.padding,
+      flex: 1,
+      height: 170,
+      alignItems: "center",
+      justifyContent: "center",
+      margin: SIZES.base,
+      borderBottomLeftRadius: 40,
+    },
+    coursenumber: {
       fontSize: SIZES.h2,
-      fontWeight: "400",
-      color: colors.textColor,
     },
-    user: {
-      width: 45,
-      height: 45,
-      borderRadius: 45,
+    coursetext: {
+      fontSize: SIZES.h3,
+    },
+    examtext: {
+      fontSize: SIZES.h3,
+    },
+    videos: {
+      backgroundColor: Colors.primaryAlpha,
+      borderRadius: 10,
+      padding: SIZES.padding,
+      marginTop: SIZES.base,
+      flex: 1,
+      height: 170,
+      alignItems: "center",
+      justifyContent: "center",
+      margin: SIZES.base,
+      borderTopRightRadius: 40,
+    },
+    class: {
+      backgroundColor: "#E3B9FF",
+      borderRadius: 10,
+      padding: SIZES.padding,
+      marginTop: SIZES.base,
+      flex: 1,
+      height: 170,
+      alignItems: "center",
+      justifyContent: "center",
+      margin: SIZES.base,
+      borderTopLeftRadius: 40,
     },
     dashedLine: {
       marginTop: 15,
       // height: 1,
       borderWidth: 0.5,
-      borderStyle: "dotted",
-      color: colors.iconBackground,
+      borderStyle: "dashed",
+      borderColor: "grey",
     },
-
-    secondsection: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignItems: "center",
-      paddingVertical: SIZES.radius,
-      paddingHorizontal: SIZES.radius,
+    lesson: {
+      backgroundColor: COLORS.blue1,
+      padding: 30,
+      margin: SIZES.base,
+      borderRadius: 10,
     },
-    seeall: {
-      color: colors.textColor,
-    },
-    searchBarContainer: {
-      flexDirection: "row",
-      alignItems: "center",
-      backgroundColor: "#f0f0f4",
-      borderRadius: 16,  
-      marginVertical: SIZES.radius,
-      shadowColor: "#000",
-      shadowOpacity: 0.2,
-      shadowRadius: 2,
-      shadowOffset: {
-        width: 0,
-        height: 1,
-      },
-    },
-    input: {
+    container: {
       flex: 1,
-      height: 50,
-      backgroundColor: "transparent",
-      paddingLeft: 10,
-      justifyContent: "center",
+      marginTop: 50,
+      padding: 16,
     },
-    searchButton: {
-      padding: 4,
-      borderRightWidth: 0.5,
-      paddingHorizontal: 4,
+    addButton: {
+      marginTop: 16,
+      padding: 10,
+      backgroundColor: "#3498db",
+      borderRadius: 5,
+      alignItems: "center",
     },
-    searchButton1: {
-      padding: 4,
-      marginLeft: 5,
+    buttonText: {
+      color: "#fff",
+    },
+    eventsContainer: {
+      marginTop: 20,
+    },
+    eventsHeader: {
+      fontSize: 18,
+      fontWeight: "bold",
+      marginBottom: 10,
     },
   });
 
   return (
     <SafeAreaView style={styles.grandParent}>
-      <ScrollView>
-        <View style={{ }}>
-          <View style={{backgroundColor:COLORS.lightblue, paddingHorizontal:SIZES.base,borderRadius:10}}>
-          <View style={styles.headericons}>
-            <MaterialIcons
-              name="read-more"
-              size={35}
-              color="black"
-              // style={{ color: colors.iconBackground }}
-            />
-            <Ionicons
-              name="notifications-outline"
-              size={24}
-              color="black"
-              // style={{ color: colors.iconBackground }}
-            />
-         
-          </View>
-
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.name}>
           <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+              <AntDesign name="menu-fold" size={28} color={COLORS.darkBlue} />
+            </TouchableOpacity>
+
             <View>
-              <Text style={styles.headertext}>Home</Text>
-              <Text style={styles.headersubtext}>Welcome Arun!</Text>
+              <Text style={styles.userName}>{student.name}</Text>
+              <Text style={styles.userEmail}>{student.email}</Text>
             </View>
-            <Image source={user} style={styles.user} />
           </View>
+          <TouchableOpacity>
+            <Entypo name="notification" size={28} color={COLORS.darkBlue} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.dashedLine} />
 
-          <View style={{ marginTop: 3 }}>
-            <TouchableOpacity
-              style={styles.searchBarContainer}
-              onPress={() => navigation.navigate("")}
-            >
-              <View
-                style={styles.input}
+        <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity style={styles.courses}>
+            <Text style={styles.coursenumber}>20</Text>
+            <Text style={styles.coursetext}>Courses</Text>
+          </TouchableOpacity>
 
-                // onChangeText={handleSearch}
-                // value={searchQuery}
-              >
-                <Text >
-                  Search Course!
-                </Text>
+          <TouchableOpacity style={styles.Exams}>
+            <Text style={styles.coursenumber}>10</Text>
+            <Text style={styles.examtext}>Exams Completed</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity style={styles.videos}>
+            <Text style={styles.coursenumber}>30</Text>
+            <Text style={styles.coursetext}>Videos Watched</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.class}>
+            <Text style={styles.coursenumber}>10</Text>
+            <Text style={styles.examtext}>Classes Attended</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View>
+          <TouchableOpacity style={styles.lesson}>
+            <View style={{flexDirection:"row"}}>
+              <View>
+                <Text style={{ fontSize: SIZES.h3 }}>App Development</Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginTop: SIZES.base,
+                  }}
+                >
+                  <FontAwesome name="play-circle-o" size={24} color="black" />
+                  <Text style={{ marginLeft: 5 }}>24 Lessons</Text>
+                </View>
+
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginTop: SIZES.base,
+                  }}
+                >
+                  <Ionicons name="time" size={24} color="black" />
+                  <Text>15 hrs</Text>
+                </View>
               </View>
 
-              <TouchableOpacity style={styles.searchButton}>
-                {/* <Image
-                    resizeMode="contain"
-                    source={}
-                    style={{
-                      height: 18,
-                      width: 18,
-                     
-                      marginRight: 8,
-                      tintColor: "black",
-                    }}
-                  /> */}
+            
+            </View>
+          </TouchableOpacity>
+        </View>
 
-                <Feather name="search" size={24} color="black"  style={{}}/>
-              </TouchableOpacity>
+        <View>
+          <Text
+            style={{
+              fontSize: SIZES.h2,
+              fontWeight: "bold",
+              margin: SIZES.base,
+            }}
+          >
+            Events
+          </Text>
+        </View>
 
-              <TouchableOpacity style={styles.searchButton1}>
-                <Entypo name="mic" size={20} color={COLORS.primary} />
-              </TouchableOpacity>
-            </TouchableOpacity>
-          </View>
-          </View>
+        <MyCalendar />
 
-          <View style={styles.dashedLine} />
+        <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity style={styles.videos}>
+            <Text style={styles.coursenumber}>30</Text>
+            <Text style={styles.coursetext}>Videos Watched</Text>
+          </TouchableOpacity>
 
-          <View style={styles.secondsection}>
-            <Text style={{ color:colors.textColor,fontSize:SIZES.h3,fontWeight:"bold"}}>Announcement</Text>
-            <TouchableOpacity>
-              <Text style={styles.seeall}>See All</Text>
-
-            </TouchableOpacity>
-          </View>
-
-
-
-              <View style={{paddingHorizontal:SIZES.base}}>
-                   <ImageSwiper />
-              </View>
-
-
-
-
+          <TouchableOpacity style={styles.class}>
+            <Text style={styles.coursenumber}>10</Text>
+            <Text style={styles.examtext}>Classes Attended</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

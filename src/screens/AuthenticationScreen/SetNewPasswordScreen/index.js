@@ -158,7 +158,7 @@ const SetNewPasswordScreen = ({ navigation }) => {
             onPress={() => navigation.goBack()}
             style={styles.back}
           >
-            <Ionicons name="ios-arrow-back" size={24} color= {COLORS.purple} />
+            <Ionicons name="ios-arrow-back" size={24} color= {COLORS.darkBlue} />
           </TouchableOpacity>
 
           <View>
@@ -233,7 +233,7 @@ const SetNewPasswordScreen = ({ navigation }) => {
           <View style={{ alignItems: "center", marginTop: 30 }}>
             <TouchableOpacity   onPress={handleContinue}
               style={{
-                backgroundColor: COLORS.purple,
+                backgroundColor: COLORS.darkBlue,
 
                 height: 57,
                 flexDirection: "row",
@@ -245,7 +245,7 @@ const SetNewPasswordScreen = ({ navigation }) => {
             >
               <Text
                 style={{
-                  color: "white",
+                  color: COLORS.white,
                   fontWeight: "bold",
                   flex: 1,
                   textAlign: "center",
@@ -254,12 +254,12 @@ const SetNewPasswordScreen = ({ navigation }) => {
                 Continue
               </Text>
               <View
-                style={{ backgroundColor: "white", borderRadius: 29, left: 10 }}
+                style={{ backgroundColor:COLORS.blue1, borderRadius: 29, left: 10 }}
               >
                 <Feather
                   name="arrow-right"
                   size={20}
-                  color= {COLORS.purple}
+                  color= {COLORS.darkBlue}
                   style={{ paddingHorizontal: 15, paddingVertical: 13 }}
                 />
               </View>

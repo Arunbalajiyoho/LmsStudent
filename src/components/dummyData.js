@@ -10,5 +10,50 @@ export const dummyData ={
             title:"How to use  Learn Management",
             content:" Upload courses. To start training, you need to add materials to the LMS. .",
         }
-    ]
+    ],
+  
+    upcomingExam:[
+        {
+        id:1,
+        title: "Development Exam",
+        examType: "Multiple Choice",
+        numberOfQuestions: 100,
+        highlightMarks: 20,
+        time: "9:00 PM",
+        duration: {
+          hours: 3,
+          minutes: 45,
+        },
+        date: "2023-12-15",
+    }
+
+    ],
+    completed:[
+        {
+            id:1,
+            coursename:"Web Development",
+            timing:"5 hrs",
+            status:"completed",
+        },
+        {
+            id:2,
+            coursename:"App",
+            timing:"3hrs",
+            status:"completed",
+        }
+    ],
+    examHistory :[
+        { id: '1',
+         courseName: 'App Development', 
+         timing: '2023-01-01 10:00 AM',
+          status: 'Passed' },
+        { id: '2',
+         courseName: 'Developing',
+          timing: '2023-02-15 02:30 PM',
+           status: 'Failed' },
+        // Add more exam history entries as needed
+      ],
+
+
+
 }

@@ -144,7 +144,7 @@ const OtpVerificationScreen = ({ navigation }) => {
           onPress={() => navigation.goBack()}
           style={styles.back}
         >
-         <Ionicons name="ios-arrow-back" size={24} color= {COLORS.purple} />
+         <Ionicons name="ios-arrow-back" size={24} color= {COLORS.darkBlue} />
         </TouchableOpacity>
 
         <View>
@@ -180,7 +180,7 @@ const OtpVerificationScreen = ({ navigation }) => {
             <TouchableOpacity
              onPress={() => navigation.navigate(SetNewPasswordScreen)}
               style={{
-                backgroundColor: COLORS.purple,
+                backgroundColor: COLORS.darkBlue,
                 height: 57,
                 flexDirection: "row",
                 alignItems: "center",
@@ -192,7 +192,7 @@ const OtpVerificationScreen = ({ navigation }) => {
             >
               <Text
                 style={{
-                  color: "white",
+                  color: COLORS.lightblue,
                   fontWeight: "bold",
                   flex: 1,
                   textAlign: "center",
@@ -201,12 +201,12 @@ const OtpVerificationScreen = ({ navigation }) => {
                 Verify
               </Text>
               <View
-                style={{ backgroundColor: "white", borderRadius: 29, left: 10 }}
+                style={{ backgroundColor: COLORS.blue1, borderRadius: 29, left: 10 }}
               >
                 <Feather
                   name="arrow-right"
                   size={20}
-                  color= {COLORS.purple}
+                  color= {COLORS.darkBlue}
                   style={{ paddingHorizontal: 15, paddingVertical: 13 }}
                 />
               </View>
@@ -214,7 +214,7 @@ const OtpVerificationScreen = ({ navigation }) => {
           </View>
 
       {countdown > 0 ? (
-        <Text style={{color:colors.textColor,textAlign:"center",paddingVertical:SIZES.radius}}>Resend OTP in {countdown} seconds</Text>
+        <Text style={{color:COLORS.white,textAlign:"center",paddingVertical:SIZES.radius}}>Resend OTP in {countdown} seconds</Text>
       ) : (
         <TouchableOpacity onPress={handleResendOTP}>
           <View
@@ -229,7 +229,7 @@ const OtpVerificationScreen = ({ navigation }) => {
               marginTop:20
             }}
           >
-          <Ionicons name="md-chatbubble-outline" size={24} color= {COLORS.purple} />
+          <Ionicons name="md-chatbubble-outline" size={24} color= {COLORS.darkBlue} />
             <View style={{ marginLeft: 5 ,}}>
               <Text style={{ color:colors.textColor }}>via sms</Text>
             </View>

@@ -32,6 +32,8 @@ import {
 import ForgetPasswordScreen from "../ForgetPasswordScreen";
 
 const LogInScreen = ({ navigation }) => {
+
+  const Logo = require("../../../../assets/images/logo.jpg");
   const { colors } = useStateContext();
 
   const [email, setEmail] = useState("");
@@ -71,7 +73,7 @@ const LogInScreen = ({ navigation }) => {
   };
 
   const getLoginButtonColor = () => {
-    return isFormEmpty() ? COLORS.lightblue : COLORS.purple;
+    return isFormEmpty() ? COLORS.lightblue : COLORS.darkBlue;
   };
 
   // styles
@@ -144,6 +146,7 @@ const LogInScreen = ({ navigation }) => {
 
             <View>
               <Image src="https://i.pinimg.com/564x/67/0c/4c/670c4c0739772da3da9358550222baa2.jpg" style={styles.image}/>
+               {/* <Image source={Logo}  style={styles.image}/> */}
             </View>
           <View>
             <Text style={styles.title}>Welcome</Text>
@@ -240,7 +243,7 @@ const LogInScreen = ({ navigation }) => {
                   style={{
                     fontWeight: "bold",
                     paddingLeft: 6,
-                    color: COLORS.purple,
+                    color: COLORS.darkBlue,
                   }}
                 >
                   Forget Password
@@ -250,7 +253,7 @@ const LogInScreen = ({ navigation }) => {
           </View>
 
         
-          <View style={{ alignItems: "center", marginTop: 30 }}>
+          <View style={{ alignItems: "center", marginTop: 20 }}>
             <TouchableOpacity
               style={{
                 backgroundColor: getLoginButtonColor(),
@@ -266,7 +269,7 @@ const LogInScreen = ({ navigation }) => {
             >
               <Text
                 style={{
-                 
+                  color:"white",
                   fontWeight: "bold",
                   flex: 1,
                   textAlign: "center",
@@ -275,12 +278,12 @@ const LogInScreen = ({ navigation }) => {
                 Log In
               </Text>
               <View
-                style={{ backgroundColor: "white", borderRadius: 29, left: 10 }}
+                style={{ backgroundColor: COLORS.blue1, borderRadius: 29, left: 10 }}
               >
                 <Feather
                   name="arrow-right"
                   size={20}
-                  color={COLORS.purple}
+                  color={COLORS.darkBlue}
                   style={{ paddingHorizontal: 15, paddingVertical: 13 }}
                 />
               </View>
