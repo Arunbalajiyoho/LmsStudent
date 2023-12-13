@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Alert, Modal, TextInput, Button } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
 
+import { useStateContext } from '../context/StateContext/StateContext';
+
+import Colors from '../constants/Colors';
+ import { COLORS } from '../constants';
 const MyCalendar = () => {
+
+
+// for using colors from context
+const { colors,isDarkMode} = useStateContext();
+
   const [selectedDate, setSelectedDate] = useState(null);
   const [events, setEvents] = useState({});
   const [eventModalVisible, setEventModalVisible] = useState(false);
@@ -51,6 +60,47 @@ const MyCalendar = () => {
     ));
   };
 
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      // marginTop: 50,
+      padding: 16,
+      backgroundColor: colors.cardBackground,
+    },
+    addButton: {
+      marginTop: 16,
+      padding: 10,
+      backgroundColor: '#3498db',
+      borderRadius: 5,
+      alignItems: 'center',
+    },
+    buttonText: {
+      color: '#fff',
+    },
+    modalContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    input: {
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 5,
+      padding: 8,
+      marginVertical: 10,
+      width: '80%',
+    },
+    eventsContainer: {
+      marginTop: 20,
+    },
+    eventsHeader: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      marginBottom: 10,
+      color:colors.textColor
+    },
+  });
+
   return (
     <View style={styles.container}>
       <CalendarPicker
@@ -90,43 +140,6 @@ const MyCalendar = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // marginTop: 50,
-    padding: 16,
-  },
-  addButton: {
-    marginTop: 16,
-    padding: 10,
-    backgroundColor: '#3498db',
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 8,
-    marginVertical: 10,
-    width: '80%',
-  },
-  eventsContainer: {
-    marginTop: 20,
-  },
-  eventsHeader: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-});
+
 
 export default MyCalendar;

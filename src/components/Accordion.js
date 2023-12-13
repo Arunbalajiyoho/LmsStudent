@@ -1,8 +1,8 @@
+
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Pressable } from 'react-native';
 import { useStateContext } from "../context/StateContext/StateContext";
 import { COLORS, SIZES, icons,FONTS } from "../constants";
-
 
 
 const Accordion = ({ title, content }) => {
@@ -55,6 +55,8 @@ const Accordion = ({ title, content }) => {
       color: colors.textColor,
     },
   });
+
+
   return (
     <View style={styles.accordion}>
       <Pressable onPress={toggleAccordion}>

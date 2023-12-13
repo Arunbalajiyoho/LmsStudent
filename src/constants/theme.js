@@ -26,7 +26,8 @@ export const COLORS = {
   white: "#FBFBFB",
   red:"#F32013",
   green:"#008000",
-  gold:"#FFD700"
+  gold:"#FFD700",
+  background:"rgba(62, 21, 102, 0.34)"
  
 };
 export const SIZES = {

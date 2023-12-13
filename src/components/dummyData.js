@@ -1,5 +1,5 @@
-export const dummyData ={
-    accordian:[
+
+ const accordian=[
         {
             id:1,
             title:"What is Learn Management",
@@ -10,9 +10,9 @@ export const dummyData ={
             title:"How to use  Learn Management",
             content:" Upload courses. To start training, you need to add materials to the LMS. .",
         }
-    ],
+    ]
   
-    upcomingExam:[
+    const upcomingExam=[
         {
         id:1,
         title: "Development Exam",
@@ -27,8 +27,8 @@ export const dummyData ={
         date: "2023-12-15",
     }
 
-    ],
-    completed:[
+    ]
+    const completed=[
         {
             id:1,
             coursename:"Web Development",
@@ -41,8 +41,8 @@ export const dummyData ={
             timing:"3hrs",
             status:"completed",
         }
-    ],
-    examHistory :[
+    ]
+    const examHistory =[
         { id: '1',
          courseName: 'App Development', 
          timing: '2023-01-01 10:00 AM',
@@ -52,8 +52,26 @@ export const dummyData ={
           timing: '2023-02-15 02:30 PM',
            status: 'Failed' },
         // Add more exam history entries as needed
-      ],
+      ]
+
+      const screens=[
+      {
+        id:'1',
+        dashboard:"Dashboard",
+        classes:"Class",
+        exams:"Exams",
+        community:"Community",
+        account:"Account",
+      }
+ ]
+
+ const icon =[
+    {
+
+        
+    }
+ ]
+
+   export default {screens,accordian,upcomingExam,completed,examHistory}
 
 
-
-}

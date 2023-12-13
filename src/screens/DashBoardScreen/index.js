@@ -26,16 +26,19 @@ import {
   FontAwesome,
   AntDesign,
 } from "@expo/vector-icons";
+
 // import from components
 import ImageSwiper from "../../components/ImageSwiper ";
 import Colors from "../../constants/Colors";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import MyCalendar from "../../components/MyCalendar";
+// import CircularProgress from "react-native-circular-progress-indicator";
+import Animated from "react-native-reanimated";
 
 
-const DashBoardScreen = ({ navigation }) => {
+const DashBoardScreen = ({ navigation, drawerAnimationStyle}) => {
   // for using colors from context
-  const { colors } = useStateContext();
+  const { colors,isDarkMode} = useStateContext();
 
   const { top } = useSafeAreaInsets();
 
@@ -89,7 +92,7 @@ const DashBoardScreen = ({ navigation }) => {
       borderRadius: 10,
     },
     courses: {
-      backgroundColor: COLORS.blue1,
+      backgroundColor:isDarkMode ? "#ffe1e8": colors.cardBackground,
       borderRadius: 10,
       padding: SIZES.padding,
       marginTop: SIZES.padding,
@@ -98,10 +101,11 @@ const DashBoardScreen = ({ navigation }) => {
       alignItems: "center",
       justifyContent: "center",
       margin: SIZES.base,
-      borderBottomRightRadius: 40,
+      borderTopRightRadius: 50,
+      borderBottomLeftRadius:50
     },
     Exams: {
-      backgroundColor: "#EBEEFA",
+      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
       borderRadius: 10,
       padding: SIZES.padding,
       marginTop: SIZES.padding,
@@ -110,19 +114,23 @@ const DashBoardScreen = ({ navigation }) => {
       alignItems: "center",
       justifyContent: "center",
       margin: SIZES.base,
-      borderBottomLeftRadius: 40,
+      borderTopLeftRadius: 50,
+      borderBottomRightRadius:50
     },
     coursenumber: {
       fontSize: SIZES.h2,
+      color:colors.textColor
     },
     coursetext: {
       fontSize: SIZES.h3,
+      color:colors.textColor
     },
     examtext: {
       fontSize: SIZES.h3,
+      color:colors.textColor
     },
     videos: {
-      backgroundColor: Colors.primaryAlpha,
+      backgroundColor: isDarkMode ? "#E6C7C2" : colors.cardBackground,
       borderRadius: 10,
       padding: SIZES.padding,
       marginTop: SIZES.base,
@@ -131,10 +139,11 @@ const DashBoardScreen = ({ navigation }) => {
       alignItems: "center",
       justifyContent: "center",
       margin: SIZES.base,
-      borderTopRightRadius: 40,
+      borderTopRightRadius: 50,
+      borderBottomLeftRadius:50
     },
     class: {
-      backgroundColor: "#E3B9FF",
+      backgroundColor:  isDarkMode ? "#DCD0FF" : colors.cardBackground,
       borderRadius: 10,
       padding: SIZES.padding,
       marginTop: SIZES.base,
@@ -143,7 +152,8 @@ const DashBoardScreen = ({ navigation }) => {
       alignItems: "center",
       justifyContent: "center",
       margin: SIZES.base,
-      borderTopLeftRadius: 40,
+      borderTopLeftRadius: 50,
+      borderBottomRightRadius:50
     },
     dashedLine: {
       marginTop: 15,
@@ -153,7 +163,7 @@ const DashBoardScreen = ({ navigation }) => {
       borderColor: "grey",
     },
     lesson: {
-      backgroundColor: COLORS.blue1,
+      backgroundColor:  isDarkMode ? "#87AFC7" : colors.cardBackground,
       padding: 30,
       margin: SIZES.base,
       borderRadius: 10,
@@ -181,9 +191,17 @@ const DashBoardScreen = ({ navigation }) => {
       fontWeight: "bold",
       marginBottom: 10,
     },
+    
   });
 
   return (
+    <Animated.View 
+       style={{
+        flex:1,
+        ...drawerAnimationStyle
+      
+      }}
+    >
     <SafeAreaView style={styles.grandParent}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.name}>
@@ -231,7 +249,7 @@ const DashBoardScreen = ({ navigation }) => {
           <TouchableOpacity style={styles.lesson}>
             <View style={{flexDirection:"row"}}>
               <View>
-                <Text style={{ fontSize: SIZES.h3 }}>App Development</Text>
+                <Text style={{ fontSize: SIZES.h3,color:colors.textColor }}>App Development</Text>
                 <View
                   style={{
                     flexDirection: "row",
@@ -239,8 +257,8 @@ const DashBoardScreen = ({ navigation }) => {
                     marginTop: SIZES.base,
                   }}
                 >
-                  <FontAwesome name="play-circle-o" size={24} color="black" />
-                  <Text style={{ marginLeft: 5 }}>24 Lessons</Text>
+                  <FontAwesome name="play-circle-o" size={24} color={COLORS.darkBlue} />
+                  <Text style={{ marginLeft: 5,color:colors.textColor }}>24 Lessons</Text>
                 </View>
 
                 <View
@@ -250,8 +268,8 @@ const DashBoardScreen = ({ navigation }) => {
                     marginTop: SIZES.base,
                   }}
                 >
-                  <Ionicons name="time" size={24} color="black" />
-                  <Text>15 hrs</Text>
+                  <Ionicons name="time" size={24} color={COLORS.darkBlue}/>
+                  <Text style={{ marginLeft: 5,color:colors.textColor }}>15 hrs</Text>
                 </View>
               </View>
 
@@ -260,12 +278,16 @@ const DashBoardScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
+
+
+
         <View>
           <Text
             style={{
               fontSize: SIZES.h2,
               fontWeight: "bold",
               margin: SIZES.base,
+              color:colors.textColor
             }}
           >
             Events
@@ -285,8 +307,13 @@ const DashBoardScreen = ({ navigation }) => {
             <Text style={styles.examtext}>Classes Attended</Text>
           </TouchableOpacity>
         </View>
+
+
+
+      
       </ScrollView>
     </SafeAreaView>
+    </Animated.View>
   );
 };
 

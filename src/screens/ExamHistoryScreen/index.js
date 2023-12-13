@@ -5,40 +5,49 @@ import { View, Text, StyleSheet, FlatList } from 'react-native';
 // import from context
 import { useStateContext } from '../../context/StateContext/StateContext'; 
 // import from dummy data
-import { dummyData } from '../../components/dummyData';
+import  dummyData  from '../../components/dummyData';
+// import from constants
+import { SIZES, FONTS, COLORS } from "../../constants/theme";
 
 const ExamHistoryScreen = () => {
  
   // state for dark mode
-  const { colors } = useStateContext();
+  const { colors,isDarkMode } = useStateContext();
   // for using styles
   const styles = StyleSheet.create({
-    container: {
+    grandParent: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center',
+      paddingHorizontal:SIZES.base,
+      paddingVertical:SIZES.base,
+
+       
     },
     title: {
       fontSize: 24,
       fontWeight: 'bold',
-      marginBottom: 20,
+      paddingVertical:SIZES.radius,
+      marginVertical:SIZES.radius,
+      color:colors.textColor,
+      textAlign:"center"
     },
     card: {
       width: '100%',
       padding: 20,
       borderRadius: 10,
       marginBottom: 15,
-      backgroundColor:colors.cardBackground,
-      borderRadius:10
+      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
+      borderRadius:10,
       // elevation: 5, // Add elevation for a card-like shadow
     },
     cardText: {
       fontSize: 18,
       marginBottom: 10,
+      color: colors.textColor,
     },
   });
   return (
-    <View style={styles.container}>
+    <View style={styles.grandParent}>
       <Text style={styles.title}>Exam History</Text>
 
       <FlatList

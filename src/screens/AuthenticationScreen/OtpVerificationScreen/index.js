@@ -2,12 +2,14 @@
 import React, { useEffect, useRef, useState } from "react";
 // imports from react native
 import { Alert, Image, StyleSheet, Text, TouchableOpacity, View,Button } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import OTPTextInput from "react-native-otp-textinput";
 import { SafeAreaView } from "react-native-safe-area-context";
 // imports from constants
 import { COLORS, FONTS, SIZES, icons, images } from "../../../constants";
 // imports from context
 import { useStateContext } from "../../../context/StateContext/StateContext";
+
 // import from expo vector icons
 import {
   MaterialIcons,
@@ -31,8 +33,7 @@ const OtpVerificationScreen = ({ navigation }) => {
       flex: 1,
       backgroundColor: colors.background,
       paddingHorizontal: SIZES.radius,
-      paddingVertical: SIZES.radius,
-     
+      paddingVertical: SIZES.radius,    
     },
     header: {
       flexDirection: "row",
@@ -139,6 +140,13 @@ const OtpVerificationScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.grandParent}>
+       <KeyboardAwareScrollView
+        keyboardDismissMode="on-drag"
+        contentContainerStyle={{
+          flex:1,
+        }}
+        showsVerticalScrollIndicator={false}
+      >
       <View style={styles.header}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
@@ -152,7 +160,7 @@ const OtpVerificationScreen = ({ navigation }) => {
         </View>
       </View>
 
-         <View style={{flex:1,justifyContent:"center",}}>
+         <View style={{flex:1,marginTop:SIZES.radius*6}}>
 
         <View style={styles.OTPTextContainer}>
           <Text style={styles.OTPText}>Code has sent sent to</Text>
@@ -214,7 +222,7 @@ const OtpVerificationScreen = ({ navigation }) => {
           </View>
 
       {countdown > 0 ? (
-        <Text style={{color:COLORS.white,textAlign:"center",paddingVertical:SIZES.radius}}>Resend OTP in {countdown} seconds</Text>
+        <Text style={{color:colors.textColor,textAlign:"center",paddingVertical:SIZES.radius}}>Resend OTP in {countdown} seconds</Text>
       ) : (
         <TouchableOpacity onPress={handleResendOTP}>
           <View
@@ -237,6 +245,7 @@ const OtpVerificationScreen = ({ navigation }) => {
         </TouchableOpacity>
       )}
       </View>
+      </KeyboardAwareScrollView>
     </SafeAreaView>
   );
 };

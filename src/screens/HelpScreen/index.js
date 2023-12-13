@@ -22,7 +22,7 @@ import { FontAwesome5, MaterialIcons, FontAwesome,Entypo  } from "@expo/vector-i
 
 
 
-const HelpScreen = () => {
+const HelpScreen = ({navigation}) => {
   // for colors
   const { colors } = useStateContext();
 
@@ -47,10 +47,10 @@ const HelpScreen = () => {
       color: colors.textColor,
     },
     back: {
-      backgroundColor: colors.iconBackground,
+      backgroundColor: COLORS.lightblue,
       padding: SIZES.radius,
       borderRadius: 10,
-      color: COLORS.lightblue,
+      color:  COLORS.darkBlue,
     },
   });
   return (
@@ -65,7 +65,7 @@ const HelpScreen = () => {
               <FontAwesome5
                 name="chevron-left"
                 size={16}
-                color={colors.primary}
+                color={  COLORS.darkBlue}
               />
             </TouchableOpacity>
 

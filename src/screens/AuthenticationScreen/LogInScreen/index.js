@@ -31,6 +31,9 @@ import {
 // import from screens.
 import ForgetPasswordScreen from "../ForgetPasswordScreen";
 
+import LottieView from "lottie-react-native"
+
+
 const LogInScreen = ({ navigation }) => {
 
   //  for store the image
@@ -132,7 +135,7 @@ const LogInScreen = ({ navigation }) => {
     width:"100%",
     height:250,
     alignSelf:"center",
-    marginBottom:25,
+    marginBottom:15,
     
     },
   });
@@ -140,26 +143,39 @@ const LogInScreen = ({ navigation }) => {
   return (
    
       <SafeAreaView style={styles.grandParent}>
+       
         <KeyboardAwareScrollView
           keyboardDismissMode="on-drag"
           contentContainerStyle={{
-            flex: 1,
-            justifyContent: "center",
+            flex:1,
           }}
+          showsVerticalScrollIndicator={false}
         >
 
-            <View>
+            {/* <View>
               <Image src="https://i.pinimg.com/564x/67/0c/4c/670c4c0739772da3da9358550222baa2.jpg" style={styles.image}/>
-               {/* <Image source={Logo}  style={styles.image}/> */}
-            </View>
+              
+            </View> */}
+             <View style={{}}>
+
+              <LottieView
+                 source={require("../../../../assets/failed.json")}
+                 autoPlay
+                 loop
+                 style={styles.image}
+              
+              />
+         
+             </View>
+
           <View>
-            <Text style={styles.title}>Welcome</Text>
-            <Text style={styles.title}>Back</Text>
+            <Text style={styles.title}>Welcome!</Text>
+           
           </View>
 
-          <View style={{ paddingVertical: SIZES.radius }}>
+          {/* <View style={{ paddingVertical: SIZES.radius }}>
             <Text style={styles.sign}>Hey! Good to see you again</Text>
-          </View>
+          </View> */}
 
           <View style={styles.container}>
             <View style={styles.inputContainer}>
@@ -224,40 +240,13 @@ const LogInScreen = ({ navigation }) => {
               paddingVertical: SIZES.radius,
             }}
           >
-            {/* <View
-              style={{
-                flexDirection: "row",
-                // paddingHorizontal: SIZES.radius,
-                paddingVertical: SIZES.radius,
-              }}
-            >
-              <Checkbox value={rememberMe} onValueChange={toggleRememberMe} />
-              <Text
-                style={{ fontSize: SIZES.h4, paddingHorizontal: SIZES.radius }}
-              >
-                Remember Me
-              </Text>
-            </View> */}
+           
 
-            <View style={{flexDirection:"row",justifyContent:"flex-end",flex:1}}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate(ForgetPasswordScreen)}
-              >
-                <Text
-                  style={{
-                    fontWeight: "bold",
-                    paddingLeft: 6,
-                    color: COLORS.darkBlue,
-                  }}
-                >
-                  Forget Password
-                </Text>
-              </TouchableOpacity>
-            </View>
+           
           </View>
 
         
-          <View style={{ alignItems: "center", marginTop: 20 }}>
+          <View style={{ alignItems: "center", }}>
             <TouchableOpacity
               style={{
                 backgroundColor: getLoginButtonColor(),
@@ -293,7 +282,54 @@ const LogInScreen = ({ navigation }) => {
               </View>
             </TouchableOpacity>
           </View>
+
+          <View style={{flexDirection:"row",justifyContent:"center",flex:1,marginTop:10}}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate(ForgetPasswordScreen)}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    paddingLeft: 6,
+                    color: COLORS.darkBlue,
+                  }}
+                >
+                  Forget Password
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+
+
+            <View style={{ alignItems: "center", }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: COLORS.darkBlue,
+                height: 55,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 26,
+                paddingHorizontal: 20,
+                marginBottom:20
+              }}
+            >
+              <Text
+                style={{
+                  color:"white",
+                  fontWeight: "bold",
+                  flex: 1,
+                  textAlign: "center",
+                }}
+              >
+              Sign UP
+              </Text>
+             
+            </TouchableOpacity>
+          </View>
+
         </KeyboardAwareScrollView>
+       
       </SafeAreaView>
    
   );

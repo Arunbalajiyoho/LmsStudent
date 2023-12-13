@@ -6,7 +6,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { TouchableOpacity,Text,StyleSheet} from "react-native";
 // import from screens
 import DashBoardScreen from "../DashBoardScreen";
-import HelpScreen from "../HelpScreen";
+import ClassesScreen from "../ClassesScreen";
+import ExamsScreen from "../ExamsScreen";
+import ProfileScreen from "../ProfileScreen";
 // import from constants
 import Colors from "../../constants/Colors";
 import { COLORS } from "../../constants";
@@ -15,6 +17,7 @@ import Icon, { Icons } from "../../constants/Icons";
 import { useStateContext } from "../../context/StateContext/StateContext";
 // import from react native animatable
 import * as Animatable from "react-native-animatable";
+
      
  
 const TabArr = [
@@ -28,34 +31,35 @@ const TabArr = [
     color: COLORS.darkBlue,
     alphaClr:COLORS.darkBlue,
   },
-    // {
-    //   route: "Explore",
-    //   label: "Explore",
-    //   type: Icons.MaterialIcons,
-    //   icon: "explore",
-    //   component: ExploreScreen,
-    //   color: Colors.darkOverlayColor,
-    //   alphaClr: Colors.primaryAlpha,
-    // },
+   
     {
-      route: "HelpScreen",
-      label: "Help",
-      type: Icons.Feather,
-      icon: "help-circle",
-      component: HelpScreen,
+      route: "ClassesScreen",
+      label: "Classes",
+      type: Icons.MaterialIcons,
+      icon: "class",
+      component: ClassesScreen,
       color: COLORS.darkBlue,
       alphaClr: COLORS.darkBlue,
     },
-  //   {
-  //     route: "ProfileScreen",
-  //     label: "Profile",
-  //     type: Icons.FontAwesome5,
-  //     icon: "user-graduate",
-  //     component: ProfileScreen,
-  //     color: Colors.darkOverlayColor,
-  //     alphaClr: Colors.primaryAlpha,
-  //   },
-  // { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: AccountScreen, color: Colors.primary, alphaClr: Colors.primaryAlpha },
+     {
+      route: "ExamsScreen",
+      label: "Exams",
+      type: Icons.AntDesign,
+      icon: "filetext1",
+      component: ExamsScreen,
+      color: Colors.darkOverlayColor,
+      alphaClr: Colors.primaryAlpha,
+    },
+    {
+      route: "ProfileScreen",
+      label: "Profile",
+      type: Icons.FontAwesome5,
+      icon: "user-graduate",
+      component: ProfileScreen,
+      color: Colors.darkOverlayColor,
+      alphaClr: Colors.primaryAlpha,
+    },
+ 
 ];
 
 // for bottom navigator
@@ -91,10 +95,10 @@ const TabButton = (props) => {
         <Icon
           type={item.type}
           name={item.icon}
-          color={focused ?  COLORS.darkBlue : Colors.lightblue}
+          color={focused ?  COLORS.darkBlue : Colors.transparentBlack7}
         />
       </Animatable.View>
-      <Text style={{ color: focused ?  COLORS.darkBlue : Colors.lightblue }}>
+      <Text style={{ color: focused ?  COLORS.darkBlue : Colors.transparentBlack7 }}>
         {item.label}
       </Text>
     </TouchableOpacity>
@@ -154,6 +158,9 @@ const BottomTabs = ({ navigation }) => {
   );
 };
 export default BottomTabs;
+
+
+
 
 
 

@@ -150,8 +150,11 @@ const SetNewPasswordScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.grandParent}>
       <KeyboardAwareScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
+        contentContainerStyle={{
+          flex:1,
+        }}
+        showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
           <TouchableOpacity
@@ -166,7 +169,7 @@ const SetNewPasswordScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={{ flex: 1, justifyContent: "center" }}>
+        <View style={{ flex: 1, marginTop:SIZES.radius*8 }}>
           <View>
             <Text style={styles.title}>Create Your New Password</Text>
           </View>

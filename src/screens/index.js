@@ -44,6 +44,7 @@ import CompletedTicketsScreen from "./CompletedTicketsScreen";
 import LoadingScreen from "./LoadingScreen";
 import HelpScreen from "./HelpScreen";
 import ProfileScreen from "./ProfileScreen";
+import SplashScreen from "./SplashScreen";
 
 export {
   DashBoardScreen,
@@ -88,4 +89,6 @@ export {
   ForgetPasswordScreen,
   SetNewPasswordScreen,
   ProfileScreen,
+  SplashScreen,
+  
 };

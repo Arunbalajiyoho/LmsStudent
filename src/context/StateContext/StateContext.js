@@ -8,6 +8,8 @@ const StateContextProvider = ({ children }) => {
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
+
+
   return (
     <StateContext.Provider
       value={{

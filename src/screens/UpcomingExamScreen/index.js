@@ -16,25 +16,26 @@ import { SIZES, COLORS } from "../../constants/theme";
 // import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
 // import from dummy data
-import { dummyData } from "../../components/dummyData";
+import  dummyData  from "../../components/dummyData";
+import ExamDetailedScreen from "../ExamDetailedScreen";
 
 const UpcomingExamScreen = ({navigation}) => {
 
   // state for dark mode
-  const { colors } = useStateContext();
+  const { colors,isDarkMode } = useStateContext();
 
 
   // for using styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor: COLORS.background,
+      // backgroundColor: COLORS.background,
       // paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius * 2,
     },
   
     card: {
-      backgroundColor: COLORS.lightblue,
+      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
       borderRadius: SIZES.radius,
       padding: SIZES.padding,
       marginBottom: SIZES.radius,
@@ -43,7 +44,7 @@ const UpcomingExamScreen = ({navigation}) => {
     },
     cardText: {
       fontSize: SIZES.body3,
-      color: COLORS.textColor,
+      color: colors.textColor,
       padding:SIZES.base
     },
     title: {
@@ -59,11 +60,14 @@ const UpcomingExamScreen = ({navigation}) => {
 
   
   return (
+    
     <SafeAreaView style={styles.grandParent}>
       
-      {dummyData.upcomingExam.map((item, index)=> (
+      {dummyData?.upcomingExam.map((item, index)=> (
 
-    
+         <TouchableOpacity key={index}
+         onPress={() => navigation.navigate('ExamDetailedScreen')}
+         >    
          <View style={styles.card}>
         <View style={{ flex: 1 }}>
           <Text style={[styles.cardText, styles.title]}>{item.title}</Text>
@@ -79,6 +83,7 @@ const UpcomingExamScreen = ({navigation}) => {
           <Text style={styles.cardText}>{item.date}</Text>
         </View>
       </View>
+      </TouchableOpacity>
         ))}
     </SafeAreaView>
   )

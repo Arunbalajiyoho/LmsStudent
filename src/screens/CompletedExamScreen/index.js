@@ -3,49 +3,53 @@ import React from 'react';
 // import from react native
 import { View, Text, StyleSheet, Button } from 'react-native';
 // import from dummy data
-import { dummyData } from '../../components/dummyData';
+import  dummyData  from '../../components/dummyData';
 // import from context
 import { useStateContext } from '../../context/StateContext/StateContext';
+import { SIZES } from '../../constants';
  
 
 const CompletedExamScreen = ({ navigation }) => {
   // state for dark mode
-  const { colors } = useStateContext();
+  const { colors,isDarkMode } = useStateContext();
   // for using styles
   const styles = StyleSheet.create({
-    container: {
-      // flex: 1,
-      justifyContent: 'center',
+    grandParent: {
+      flex: 1,
+      paddingVertical:SIZES.radius,
       alignItems: 'center',
     },
     title: {
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 20,
+      color:colors.textColor,
     },
     card: {
       width: '95%',
       padding: 20,
       borderRadius: 10,
       // elevation: 1,
-      backgroundColor:colors.cardBackground,
+      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
       margin:10
     },
     cardText: {
       fontSize: 18,
       marginBottom: 10,
+      color:colors.textColor,
+
     },
   });
 
   
   return (
  
-    <View style={styles.container}>
+    <View style={styles.grandParent}>
     
         
       
       <Text style={styles.title}>Exam Completed!</Text>
-      {dummyData.completed.map((item,index)=>(
+      {dummyData?.completed.map((item,index)=>(
       <View style={styles.card}
       key={index}>
         <Text style={styles.cardText}>Course Name: {item.coursename}</Text>

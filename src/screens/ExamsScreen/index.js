@@ -20,7 +20,7 @@ import { useStateContext } from "../../context/StateContext/StateContext";
 
 const ExamsScreen = ({ navigation }) => {
   // state for darkmode
-  const { colors } = useStateContext();
+  const { colors,isDarkMode } = useStateContext();
   // state for tabs
   const [activeTab, setActiveTab] = useState("Upcoming Exams");
 
@@ -42,7 +42,7 @@ const ExamsScreen = ({ navigation }) => {
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor: Colors.primaryAlpha,
+      backgroundColor:colors.background,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius * 2,
       
@@ -56,7 +56,7 @@ const ExamsScreen = ({ navigation }) => {
       fontSize: SIZES.h2,
       fontWeight: "bold",
       marginLeft: SIZES.radius,
-      color: COLORS.textColor,
+      color: colors.textColor,
     },
     back: {
       backgroundColor: COLORS.lightblue,

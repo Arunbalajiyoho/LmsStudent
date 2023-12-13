@@ -129,10 +129,12 @@ const ForgetPasswordScreen = ({ navigation }) => {
     cardtext: {
       marginBottom: SIZES.base,
       color: colors.textColor,
-      color: COLORS.darkGray,
+     
     },
     cadrnumber: {
       fontWeight: "bold",
+      color: colors.textColor,
+      color: COLORS.darkGray,
     },
     button: {
       backgroundColor: colors.primary,
