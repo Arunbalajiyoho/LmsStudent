@@ -402,8 +402,8 @@ const Navigation = ({navigation}) => {
         headerShown: false,
       }}
     >
+       <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} /> 
       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
-       <Stack.Screen name="DashBoardScreen" component={CustomDrawer} /> 
        <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
        <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen} />
        <Stack.Screen name="SplashScreen" component={SplashScreen} /> 

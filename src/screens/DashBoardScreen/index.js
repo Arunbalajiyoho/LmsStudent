@@ -34,11 +34,12 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import MyCalendar from "../../components/MyCalendar";
 // import CircularProgress from "react-native-circular-progress-indicator";
 import Animated from "react-native-reanimated";
+import CourseCard from "../../components/CourseCard ";
+import dummyData from "../../components/dummyData";
 
-
-const DashBoardScreen = ({ navigation, drawerAnimationStyle}) => {
+const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
   // for using colors from context
-  const { colors,isDarkMode} = useStateContext();
+  const { colors, isDarkMode } = useStateContext();
 
   const { top } = useSafeAreaInsets();
 
@@ -54,14 +55,19 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle}) => {
   // for image
   const user = require("../../../assets/images/Arunbalaji.jpg");
 
+  const test = require("../../../assets/images/background.png")
+
+  const handleCardPress = () => {
+    // Handle card press action
+  };
+
   // styles
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
       backgroundColor: colors.background,
-      paddingHorizontal: SIZES.radius,
+      paddingHorizontal: SIZES.base,
       paddingVertical: SIZES.radius,
-      
     },
     header: {
       flexDirection: "row",
@@ -91,98 +97,7 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle}) => {
       padding: SIZES.base,
       borderRadius: 10,
     },
-    courses: {
-      backgroundColor:isDarkMode ? "#ffe1e8": colors.cardBackground,
-      borderRadius: 10,
-      padding: SIZES.padding,
-      marginTop: SIZES.padding,
-      flex: 1,
-      height: 170,
-      alignItems: "center",
-      justifyContent: "center",
-      margin: SIZES.base,
-      borderTopRightRadius: 50,
-      borderBottomLeftRadius:50
-    },
-    Exams: {
-      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
-      borderRadius: 10,
-      padding: SIZES.padding,
-      marginTop: SIZES.padding,
-      flex: 1,
-      height: 170,
-      alignItems: "center",
-      justifyContent: "center",
-      margin: SIZES.base,
-      borderTopLeftRadius: 50,
-      borderBottomRightRadius:50
-    },
-    coursenumber: {
-      fontSize: SIZES.h2,
-      color:colors.textColor
-    },
-    coursetext: {
-      fontSize: SIZES.h3,
-      color:colors.textColor
-    },
-    examtext: {
-      fontSize: SIZES.h3,
-      color:colors.textColor
-    },
-    videos: {
-      backgroundColor: isDarkMode ? "#E6C7C2" : colors.cardBackground,
-      borderRadius: 10,
-      padding: SIZES.padding,
-      marginTop: SIZES.base,
-      flex: 1,
-      height: 170,
-      alignItems: "center",
-      justifyContent: "center",
-      margin: SIZES.base,
-      borderTopRightRadius: 50,
-      borderBottomLeftRadius:50
-    },
-    class: {
-      backgroundColor:  isDarkMode ? "#DCD0FF" : colors.cardBackground,
-      borderRadius: 10,
-      padding: SIZES.padding,
-      marginTop: SIZES.base,
-      flex: 1,
-      height: 170,
-      alignItems: "center",
-      justifyContent: "center",
-      margin: SIZES.base,
-      borderTopLeftRadius: 50,
-      borderBottomRightRadius:50
-    },
-    dashedLine: {
-      marginTop: 15,
-      // height: 1,
-      borderWidth: 0.5,
-      borderStyle: "dashed",
-      borderColor: "grey",
-    },
-    lesson: {
-      backgroundColor:  isDarkMode ? "#87AFC7" : colors.cardBackground,
-      padding: 30,
-      margin: SIZES.base,
-      borderRadius: 10,
-    },
-    container: {
-      flex: 1,
-      marginTop: 50,
-      padding: 16,
-    },
-    addButton: {
-      marginTop: 16,
-      padding: 10,
-      backgroundColor: "#3498db",
-      borderRadius: 5,
-      alignItems: "center",
-    },
-    buttonText: {
-      color: "#fff",
-    },
+
     eventsContainer: {
       marginTop: 20,
     },
@@ -191,128 +106,230 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle}) => {
       fontWeight: "bold",
       marginBottom: 10,
     },
-    
+    dashedLine: {
+      marginTop: 10,
+      // height: 1,
+      borderWidth: 0.5,
+      borderStyle: "dashed",
+      borderColor: "grey",
+    },
+    coursesContainer: {
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginTop: SIZES.padding,
+    },
+    courseCard: {
+      width: "32%",
+      backgroundColor: isDarkMode ? "#ffe1C7" : colors.cardBackground,
+      borderRadius: 10,
+      padding: SIZES.radius,
+      marginTop: SIZES.radius,
+      height: 170,
+    },
+    courseImage: {
+      width: "50%",
+      height: 50, // Set the desired height for the course image
+      resizeMode: "cover",
+      borderRadius: 20,
+    },
+    courseName: {
+      fontSize: 14,
+      fontWeight: "bold",
+      marginTop: 20,
+      color: COLORS.textColor,
+    },
+    detailsContainer: {
+      flexDirection: "row",
+      // justifyContent: "space-between",
+      alignItems: "center",
+      marginTop: 18,
+    },
+    detailsText: {
+      fontSize: 12,
+      color: COLORS.textColor,
+    },
+    paperlist:{
+      flexDirection:"row",
+      paddingHorizontal:SIZES.base,
+      justifyContent:"space-between",
+      marginTop:SIZES.radius,
+      
+
+    },
   });
 
+  const courses = [
+    {
+      name: "Course 1",
+      image:
+        "https://www.shutterstock.com/shutterstock/photos/2071252046/display_1500/stock-photo-portrait-of-cheerful-male-international-indian-student-with-backpack-learning-accessories-standing-2071252046.jpg",
+      details: "More details",
+      backgroundColor: isDarkMode ? "#9bcefc" : colors.cardBackground,
+    },
+    {
+      name: "Course 2",
+      image:
+        "https://static8.depositphotos.com/1008303/880/i/450/depositphotos_8803246-stock-photo-asian-college-student.jpg",
+      details: "More details",
+      backgroundColor: isDarkMode ? "#c3e3" : colors.cardBackground,
+      // backgroundColor: isDarkMode ? "#ffe1c7" : colors.cardBackground,
+    },
+    {
+      name: "Course 3",
+      image:
+        "https://static8.depositphotos.com/1008303/880/i/450/depositphotos_8803246-stock-photo-asian-college-student.jpg",
+      details: "More details",
+      // backgroundColor: isDarkMode ? "#e8ffad" : colors.cardBackground,
+      backgroundColor: isDarkMode ? "#ffe1c7" : colors.cardBackground,
+    },
+  ];
+
+  const renderCourseCard = (course, index) => (
+    <TouchableOpacity
+      key={index}
+      style={[styles.courseCard, { backgroundColor: course.backgroundColor }]}
+    >
+      <Image source={{ uri: course.image }} style={styles.courseImage} />
+      <Text style={styles.courseName}>{course.name}</Text>
+      <View style={styles.detailsContainer}>
+        <Text style={styles.detailsText}>{course.details}</Text>
+        <FontAwesome
+          name="angle-double-right"
+          size={18}
+          color="black"
+          style={{ marginLeft: 5 }}
+        />
+      </View>
+    </TouchableOpacity>
+  );
+
   return (
-    <Animated.View 
-       style={{
-        flex:1,
-        ...drawerAnimationStyle
-      
+    <Animated.View
+      style={{
+        flex: 1,
+        ...drawerAnimationStyle,
       }}
     >
-    <SafeAreaView style={styles.grandParent}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.name}>
-          <View style={styles.header}>
-            <TouchableOpacity onPress={() => navigation.openDrawer()}>
-              <AntDesign name="menu-fold" size={28} color={COLORS.darkBlue} />
-            </TouchableOpacity>
+      <SafeAreaView style={styles.grandParent}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.name}>
+            <View style={styles.header}>
+              <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                <AntDesign name="menu-fold" size={28} color={COLORS.darkBlue} />
+              </TouchableOpacity>
 
-            <View>
-              <Text style={styles.userName}>{student.name}</Text>
-              <Text style={styles.userEmail}>{student.email}</Text>
-            </View>
-          </View>
-          <TouchableOpacity>
-            <Entypo name="notification" size={28} color={COLORS.darkBlue} />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.dashedLine} />
-
-        <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity style={styles.courses}>
-            <Text style={styles.coursenumber}>20</Text>
-            <Text style={styles.coursetext}>Courses</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.Exams}>
-            <Text style={styles.coursenumber}>10</Text>
-            <Text style={styles.examtext}>Exams Completed</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity style={styles.videos}>
-            <Text style={styles.coursenumber}>30</Text>
-            <Text style={styles.coursetext}>Videos Watched</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.class}>
-            <Text style={styles.coursenumber}>10</Text>
-            <Text style={styles.examtext}>Classes Attended</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View>
-          <TouchableOpacity style={styles.lesson}>
-            <View style={{flexDirection:"row"}}>
               <View>
-                <Text style={{ fontSize: SIZES.h3,color:colors.textColor }}>App Development</Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    marginTop: SIZES.base,
-                  }}
-                >
-                  <FontAwesome name="play-circle-o" size={24} color={COLORS.darkBlue} />
-                  <Text style={{ marginLeft: 5,color:colors.textColor }}>24 Lessons</Text>
-                </View>
-
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    marginTop: SIZES.base,
-                  }}
-                >
-                  <Ionicons name="time" size={24} color={COLORS.darkBlue}/>
-                  <Text style={{ marginLeft: 5,color:colors.textColor }}>15 hrs</Text>
-                </View>
+                <Text style={styles.userName}>{student.name}</Text>
+                <Text style={styles.userEmail}>{student.email}</Text>
               </View>
-
-            
             </View>
-          </TouchableOpacity>
-        </View>
+            <TouchableOpacity>
+              <Entypo name="notification" size={28} color={COLORS.darkBlue} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.dashedLine} />
 
+          <View style={styles.coursesContainer}>
+            {courses.map((course, index) => renderCourseCard(course, index))}
+          </View>
 
-
-
-        <View>
-          <Text
+          <View
             style={{
-              fontSize: SIZES.h2,
-              fontWeight: "bold",
-              margin: SIZES.base,
-              color:colors.textColor
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginVertical: SIZES.padding,
             }}
           >
-            Events
-          </Text>
-        </View>
+            <View>
+              <Text
+                style={{
+                  fontSize: SIZES.h3,
+                  fontWeight: "bold",
+                  // margin: SIZES.base,
+                  color: colors.textColor,
+                }}
+              >
+                Quick Test
+              </Text>
+            </View>
 
-        <MyCalendar />
+            <View>
+              <TouchableOpacity>
+                <Text>View All</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
 
-        <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity style={styles.videos}>
-            <Text style={styles.coursenumber}>30</Text>
-            <Text style={styles.coursetext}>Videos Watched</Text>
-          </TouchableOpacity>
+          <View style={styles.container}>
+            <CourseCard
+              courseName="React Native"
+              lessons={10}
+              duration="4 weeks"
+              imageSource={test}
+              onPress={handleCardPress}
+            />
+          </View>
 
-          <TouchableOpacity style={styles.class}>
-            <Text style={styles.coursenumber}>10</Text>
-            <Text style={styles.examtext}>Classes Attended</Text>
-          </TouchableOpacity>
-        </View>
+          <View>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                marginTop: SIZES.radius,
+                color: colors.textColor,
+              }}
+            >
+              Papers List
+            </Text>
+          </View>
+
+
+            <View style={styles.paperlist}>
+        
+
+            <View style={{  backgroundColor: isDarkMode ? "#9bcefc" : colors.cardBackground,padding:SIZES.radius,borderRadius:10}}>
+              <Text style={{fontWeight:"bold"}}>O/L</Text>
+              <Text>100+ Question Paper</Text>
+              <Text>Available</Text>
+              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:4,borderRadius:20,width:90}}>
+                <Text style={{color:"white",paddingHorizontal:8}}>See More</Text>
+              </TouchableOpacity>
+            </View>
+       
+            <View style={{  backgroundColor: isDarkMode ? "#e8ffad" : colors.cardBackground,padding:SIZES.radius,borderRadius:10}}>
+           
+              <Text style={{fontWeight:"bold"}}>Model Paper</Text>
+              <Text>100+ Question Paper</Text>
+              <Text>Available</Text>
+              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:4,borderRadius:20,width:90}}>
+                <Text style={{color:"white",paddingHorizontal:8}}>See More</Text>
+              </TouchableOpacity>
+           
+         </View>
+
+         </View>
 
 
 
-      
-      </ScrollView>
-    </SafeAreaView>
+
+
+          <View>
+            <Text
+              style={{
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+                marginTop: SIZES.radius,
+                color: colors.textColor,
+              }}
+            >
+              Events
+            </Text>
+          </View>
+
+          <MyCalendar />
+        </ScrollView>
+      </SafeAreaView>
     </Animated.View>
   );
 };

@@ -65,12 +65,8 @@
       }
  ]
 
- const icon =[
-    {
+ 
 
-        
-    }
- ]
 
    export default {screens,accordian,upcomingExam,completed,examHistory}
 
