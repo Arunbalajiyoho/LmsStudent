@@ -292,8 +292,8 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
               <Text style={{fontWeight:"bold"}}>O/L</Text>
               <Text>100+ Question Paper</Text>
               <Text>Available</Text>
-              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:4,borderRadius:20,width:90}}>
-                <Text style={{color:"white",paddingHorizontal:8}}>See More</Text>
+              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:5,borderRadius:20,width:100}}>
+                <Text style={{color:"lightgray",paddingHorizontal:8,}}>See More</Text>
               </TouchableOpacity>
             </View>
        
@@ -302,18 +302,15 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
               <Text style={{fontWeight:"bold"}}>Model Paper</Text>
               <Text>100+ Question Paper</Text>
               <Text>Available</Text>
-              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:4,borderRadius:20,width:90}}>
-                <Text style={{color:"white",paddingHorizontal:8}}>See More</Text>
+              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:5,borderRadius:20,width:100}}>
+                <Text style={{color:"lightgray",paddingHorizontal:8}}>See More</Text>
               </TouchableOpacity>
            
          </View>
 
          </View>
 
-
-
-
-
+ 
           <View>
             <Text
               style={{
