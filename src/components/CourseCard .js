@@ -28,12 +28,14 @@ const CourseCard = ({ courseName, lessons, duration, imageSource, onPress, }) =>
     textContainer: {
       padding: 15,
       flex: 1,
+      
     },
     courseName: {
     
       fontSize: 18,
       fontWeight: 'bold',
       marginBottom: 5,
+      color: colors.textColor,
     },
     courseImage: {
       width: 100,
@@ -48,10 +50,11 @@ const CourseCard = ({ courseName, lessons, duration, imageSource, onPress, }) =>
       <View style={styles.contentContainer}>
         <View style={styles.textContainer}>
           <Text style={styles.courseName}>{courseName}</Text>
-          <Text>{`${lessons} Lessons`}</Text>
-          <Text>{`Duration: ${duration}`}</Text>
+          <Text style={{ color: colors.textColor,}}>{`${lessons} Lessons`}</Text>
+          <Text style={{ color: colors.textColor,}}>{`Duration: ${duration}`}</Text>
           <Text style={{
-            textDecorationStyle:"solid"
+            textDecorationStyle:"solid",
+            color: colors.textColor,
           }}>Start Now</Text>
         </View>
         <View style={{paddingHorizontal:SIZES.padding}}>

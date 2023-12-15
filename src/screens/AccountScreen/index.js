@@ -27,13 +27,14 @@ const AccountScreen = ({ navigation }) => {
       flex: 1,
       backgroundColor: colors.background,
       // paddingHorizontal: SIZES.radius,
-      paddingVertical: SIZES.radius,
+      // paddingVertical: SIZES.radius,
     },
     back: {
-      marginRight: SIZES.radius,
-      backgroundColor: COLORS.blue1,
-      padding: SIZES.radius,
+      backgroundColor: COLORS.lightblue,
+      padding: SIZES.base,
       borderRadius: 10,
+      color: COLORS.primary,
+      
     },
     Notification: {
       marginHorizontal: SIZES.base,
@@ -286,7 +287,7 @@ const AccountScreen = ({ navigation }) => {
 
           </View>
 
-          <View style={{ alignItems: "center", marginTop: 30 }}>
+          <View style={{ alignItems: "center", marginTop: 20 }}>
             <TouchableOpacity 
               style={{
                 backgroundColor: COLORS.darkBlue,

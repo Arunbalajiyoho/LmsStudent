@@ -65,12 +65,12 @@ const { colors,isDarkMode} = useStateContext();
       flex: 1,
       // marginTop: 50,
       padding: 16,
-      backgroundColor: colors.cardBackground,
+      backgroundColor:  isDarkMode ? Colors.greenAlpha  : colors.cardBackground,
     },
     addButton: {
       marginTop: 16,
       padding: 10,
-      backgroundColor: '#3498db',
+      backgroundColor: COLORS.darkBlue,
       borderRadius: 5,
       alignItems: 'center',
     },
@@ -125,9 +125,21 @@ const { colors,isDarkMode} = useStateContext();
             value={eventText}
             onChangeText={(text) => setEventText(text)}
           />
-          <Button title="Save Event" onPress={saveEvent} />
-          <View style={{marginTop:10}}>
-          <Button title="Cancel" onPress={() => setEventModalVisible(false)} />
+
+         <TouchableOpacity onPress={saveEvent}>
+        <View style={styles.addButton}>
+          <Text style={styles.buttonText}>Save Event</Text>
+        </View>
+      </TouchableOpacity>
+          
+        
+          <View style={{marginTop:1}}>
+          <TouchableOpacity onPress={() => setEventModalVisible(false)} >
+        <View style={styles.addButton}>
+          <Text style={styles.buttonText}>Cancel</Text>
+        </View>
+      </TouchableOpacity>
+         
           </View>
         </View>
       </Modal>

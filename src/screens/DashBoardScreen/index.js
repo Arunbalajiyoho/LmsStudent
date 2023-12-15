@@ -55,11 +55,12 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
   // for image
   const user = require("../../../assets/images/Arunbalaji.jpg");
 
-  const test = require("../../../assets/images/background.png")
+  const test = require("../../../assets/images/background.png");
 
   const handleCardPress = () => {
     // Handle card press action
   };
+
 
   // styles
   const styles = StyleSheet.create({
@@ -136,7 +137,7 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
       fontSize: 14,
       fontWeight: "bold",
       marginTop: 20,
-      color: COLORS.textColor,
+      color: colors.textColor,
     },
     detailsContainer: {
       flexDirection: "row",
@@ -146,17 +147,17 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
     },
     detailsText: {
       fontSize: 12,
-      color: COLORS.textColor,
+      color: colors.textColor,
     },
-    paperlist:{
-      flexDirection:"row",
-      paddingHorizontal:SIZES.base,
-      justifyContent:"space-between",
-      marginTop:SIZES.radius,
-      
-
+    paperlist: {
+      flexDirection: "row",
+      paddingHorizontal: SIZES.base,
+      justifyContent: "space-between",
+      marginTop: SIZES.radius,
     },
   });
+
+
 
   const courses = [
     {
@@ -256,7 +257,16 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
 
             <View>
               <TouchableOpacity>
-                <Text>View All</Text>
+                <Text 
+                style={{
+                   color: colors.textColor,
+                   textDecorationLine: "underline",
+                    textDecorationStyle: "dashed",
+                    fontWeight:"600"
+                     }}>
+                      View All
+                 </Text>
+
               </TouchableOpacity>
             </View>
           </View>
@@ -271,6 +281,7 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
             />
           </View>
 
+
           <View>
             <Text
               style={{
@@ -284,33 +295,66 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
             </Text>
           </View>
 
-
-            <View style={styles.paperlist}>
-        
-
-            <View style={{  backgroundColor: isDarkMode ? "#9bcefc" : colors.cardBackground,padding:SIZES.radius,borderRadius:10}}>
-              <Text style={{fontWeight:"bold"}}>O/L</Text>
-              <Text>100+ Question Paper</Text>
-              <Text>Available</Text>
-              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:5,borderRadius:20,width:100}}>
-                <Text style={{color:"lightgray",paddingHorizontal:8,}}>See More</Text>
+          <View style={styles.paperlist}>
+            <View
+              style={{
+                backgroundColor: isDarkMode ? "#9bcefc" : colors.cardBackground,
+                padding: SIZES.base*2,
+                borderRadius: 10,
+              }}
+            >
+              <Text style={{ fontWeight: "bold", color: colors.textColor }}>
+                O/L
+              </Text>
+              <Text style={{ color: colors.textColor }}>
+                100+ Question Paper
+              </Text>
+              <Text style={{ color: colors.textColor }}>Available</Text>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: COLORS.darkBlue,
+                  marginTop: SIZES.base,
+                  padding: 5,
+                  borderRadius: 20,
+                  width: 100,
+                }}
+              >
+                <Text style={{ color: "lightgray", paddingHorizontal: 8 }}>
+                  See More
+                </Text>
               </TouchableOpacity>
             </View>
-       
-            <View style={{  backgroundColor: isDarkMode ? "#e8ffad" : colors.cardBackground,padding:SIZES.radius,borderRadius:10}}>
-           
-              <Text style={{fontWeight:"bold"}}>Model Paper</Text>
-              <Text>100+ Question Paper</Text>
-              <Text>Available</Text>
-              <TouchableOpacity style={{backgroundColor:"black",marginTop:SIZES.base,padding:5,borderRadius:20,width:100}}>
-                <Text style={{color:"lightgray",paddingHorizontal:8}}>See More</Text>
+
+            <View
+              style={{
+                backgroundColor: isDarkMode ? "#e8ffad" : colors.cardBackground,
+                padding: SIZES.base*2,
+                borderRadius: 10,
+              }}
+            >
+              <Text style={{ fontWeight: "bold", color: colors.textColor }}>
+                Model Paper
+              </Text>
+              <Text style={{ color: colors.textColor }}>
+                100+ Question Paper
+              </Text>
+              <Text style={{ color: colors.textColor }}>Available</Text>
+              <TouchableOpacity
+                style={{
+                  backgroundColor: COLORS.darkBlue,
+                  marginTop: SIZES.base,
+                  padding: 5,
+                  borderRadius: 20,
+                  width: 100,
+                }}
+              >
+                <Text style={{ color: "lightgray", paddingHorizontal: 8 }}>
+                  See More
+                </Text>
               </TouchableOpacity>
-           
-         </View>
+            </View>
+          </View>
 
-         </View>
-
- 
           <View>
             <Text
               style={{
@@ -318,6 +362,8 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
                 fontWeight: "bold",
                 marginTop: SIZES.radius,
                 color: colors.textColor,
+                paddingVertical: SIZES.radius,
+                
               }}
             >
               Events
@@ -325,6 +371,10 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
           </View>
 
           <MyCalendar />
+          <View style={{marginBottom:50}}>
+
+          </View>
+
         </ScrollView>
       </SafeAreaView>
     </Animated.View>

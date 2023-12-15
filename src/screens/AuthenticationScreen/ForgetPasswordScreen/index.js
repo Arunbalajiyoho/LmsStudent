@@ -84,9 +84,9 @@ const ForgetPasswordScreen = ({ navigation }) => {
     },
     back: {
       backgroundColor: COLORS.lightblue,
-      padding: SIZES.radius,
+      padding: SIZES.base,
       borderRadius: 10,
-      color: COLORS.purple,
+      color: COLORS.darkBlue,
     },
     fonttext: {
       marginVertical: SIZES.radius,

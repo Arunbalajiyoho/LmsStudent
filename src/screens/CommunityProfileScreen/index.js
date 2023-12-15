@@ -52,12 +52,12 @@ const CommunityProfileScreen = ({navigation}) => {
       {
         name: 'Bob Johnson',
         designation: 'Instructor',
-        image: 'https://placekitten.com/160/160', // Replace with actual image URL
+        image: 'https://static8.depositphotos.com/1008303/880/i/450/depositphotos_8803246-stock-photo-asian-college-student.jpg', // Replace with actual image URL
       },
       {
         name: 'Bob Johnson',
         designation: 'Instructor',
-        image: 'https://placekitten.com/160/160', // Replace with actual image URL
+        image: 'https://static8.depositphotos.com/1008303/880/i/450/depositphotos_8803246-stock-photo-asian-college-student.jpg', // Replace with actual image URL
       },
       // Add more members as needed
     ],
@@ -85,7 +85,7 @@ const CommunityProfileScreen = ({navigation}) => {
     },
     back: {
       backgroundColor: COLORS.lightblue,
-      padding: SIZES.radius,
+      padding: SIZES.base,
       borderRadius: 10,
       color: COLORS.darkBlue,
     },

@@ -17,6 +17,7 @@ import { SIZES, COLORS } from "../../constants/theme";
 import { useStateContext } from "../../context/StateContext/StateContext";
 // import from dummy data
 import  dummyData  from "../../components/dummyData";
+import Colors from "../../constants/Colors";
 import ExamDetailedScreen from "../ExamDetailedScreen";
 
 const UpcomingExamScreen = ({navigation}) => {
@@ -29,18 +30,19 @@ const UpcomingExamScreen = ({navigation}) => {
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      // backgroundColor: COLORS.background,
-      // paddingHorizontal: SIZES.radius,
+      backgroundColor: Colors.greenAlpha,
+      paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius * 2,
     },
   
     card: {
-      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
+      backgroundColor:  isDarkMode ? "white" : colors.cardBackground,
       borderRadius: SIZES.radius,
-      padding: SIZES.padding,
+      padding: SIZES.radius,
       marginBottom: SIZES.radius,
       flexDirection: "row",
       alignItems: "center",
+
     },
     cardText: {
       fontSize: SIZES.body3,

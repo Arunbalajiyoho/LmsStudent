@@ -47,9 +47,9 @@ const OtpVerificationScreen = ({ navigation }) => {
     },
     back: {
       backgroundColor: COLORS.lightblue,
-      padding: SIZES.radius,
+      padding: SIZES.base,
       borderRadius: 10,
-      color: COLORS.primary,
+      color: COLORS.darkBlue,
     },
     OTPText: {
       color: colors.textColor,

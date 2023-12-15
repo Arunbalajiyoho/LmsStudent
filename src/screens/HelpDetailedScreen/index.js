@@ -4,19 +4,90 @@ import React from "react";
 import {
   View,
   Text,
-  Image,
-  StyleSheet,
   ScrollView,
+  StyleSheet,
   TouchableOpacity,
+  ScrollViewBase,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
+// import from constants
+import { SIZES, FONTS, COLORS } from "../../constants/theme";
+// import from components
+import TopTabs from "../../components/TopTabs";
+// import from expo
+import { FontAwesome5, MaterialIcons, FontAwesome,Entypo  } from "@expo/vector-icons";
 
-const HelpDetailedScreen = () => {
+
+
+
+const HelpDetailedScreen = ({navigation}) => {
+  // for colors
+  const { colors } = useStateContext();
+
+
+  // styles
+  const styles = StyleSheet.create({
+    grandParent: {
+      flex: 1,
+      backgroundColor: colors.background,
+    //   paddingHorizontal: SIZES.radius,
+      paddingVertical: SIZES.radius * 2,
+    },
+    header: {
+      flexDirection: "row",
+      alignItems: "center",
+      paddingHorizontal: SIZES.radius,
+    },
+    heading: {
+      fontSize: SIZES.h2,
+      fontWeight: "bold",
+      marginLeft: SIZES.radius,
+      color: colors.textColor,
+    },
+    back: {
+      backgroundColor: COLORS.lightblue,
+      padding: SIZES.base,
+      borderRadius: 10,
+      color: COLORS.darkBlue,
+    },
+  });
   return (
-   <SafeAreaView>
-    
-   </SafeAreaView>
-  )
-}
+    <SafeAreaView style={styles.grandParent}>
+      <ScrollView>
+        <View style={{marginTop:SIZES.radius}}>
+          <View style={styles.header}>
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.back}
+            >
+              <FontAwesome5
+                name="chevron-left"
+                size={16}
+                color={  COLORS.darkBlue}
+              />
+            </TouchableOpacity>
 
-export default HelpDetailedScreen
+            <View>
+              <Text style={styles.heading}>Help Details</Text>
+            </View>
+          </View>
+
+            <View style={{marginTop:SIZES.radius,}}> 
+            <TopTabs />
+            </View>
+           
+           
+
+
+
+
+
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default HelpDetailedScreen;

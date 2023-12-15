@@ -42,10 +42,10 @@ const ExamDetailedScreen = () => {
       color: colors.textColor,
     },
     back: {
-      marginRight: SIZES.radius,
-      backgroundColor: colors.iconBackground,
+      backgroundColor: COLORS.lightblue,
       padding: SIZES.base,
       borderRadius: 10,
+      color: COLORS.darkBlue,
     },
  title:{
   fontSize:SIZES.h3,
@@ -53,7 +53,7 @@ const ExamDetailedScreen = () => {
  },
  titlehead:{
   marginTop:SIZES.radius,
-  backgroundColor:"red",
+  backgroundColor: isDarkMode ? "#9bcefc" : colors.cardBackground,
   padding:SIZES.padding,
   borderRadius:10
  },
@@ -84,7 +84,7 @@ const ExamDetailedScreen = () => {
  },
  notify:{
   // borderWidth:1,
-  backgroundColor:"red",
+  backgroundColor: isDarkMode ? "#9bcefc" : colors.cardBackground,
   padding:SIZES.base,
   borderRadius:10,
   alignItems:"center"
@@ -115,11 +115,14 @@ const ExamDetailedScreen = () => {
   borderTopEndRadius:25,
   borderTopStartRadius:25,
   flex:1,
-  marginTop:SIZES.padding
+  marginTop:SIZES.padding,
+  paddingHorizontal:SIZES.radius
  },
  exam:{
   color:colors.textColor,
   fontSize:SIZES.h2,
+  fontWeight:"bold",
+  
  },
  examoverview:{
   marginTop:SIZES.radius
@@ -143,7 +146,7 @@ const ExamDetailedScreen = () => {
             onPress={() => navigation.goBack()}
             style={styles.back}
           >
-            <Ionicons name="ios-arrow-back" size={24} color="black" />
+            <Ionicons name="ios-arrow-back" size={24} color= {COLORS.darkBlue} />
           </TouchableOpacity>
 
           <View>
@@ -194,6 +197,8 @@ const ExamDetailedScreen = () => {
         </View>
 
         <View style={styles.bottomsheet}>
+
+         
         <View style={styles.bottom}>
 
         <View style={styles.imageview}>
@@ -203,7 +208,7 @@ const ExamDetailedScreen = () => {
           />
         <View style={{marginLeft:10,marginTop:10}}>
           <Text style={{color:colors.textColor,fontWeight:"bold",fontSize:SIZES.h3}}>
-            Sanjay Yoho
+            Arunbalaji
           </Text>
         </View>
         </View>
@@ -220,6 +225,9 @@ const ExamDetailedScreen = () => {
         </View>
 
         </View>
+        
+       <View style={{flex:1,justifyContent:"space-between"}}>
+
         <View style={styles.examoverview}>
           <Text style={styles.exam}>
             Exam Overview:
@@ -233,11 +241,35 @@ const ExamDetailedScreen = () => {
           </Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.enroll}>
-          <Text style={{color:"white"}}>
-            Enroll Now
-          </Text>
-        </TouchableOpacity>
+       
+        <View style={{ alignItems: "center",margin:SIZES.radius }}>
+            <TouchableOpacity
+              style={{
+                backgroundColor: COLORS.darkBlue,
+                height: 55,
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 26,
+                paddingHorizontal: 20,
+                marginBottom:20
+              }}
+            >
+              <Text
+                style={{
+                  color:"white",
+                  fontWeight: "bold",
+                  flex: 1,
+                  textAlign: "center",
+                }}
+              >
+               Enroll Exam
+              </Text>
+             
+            </TouchableOpacity>
+          </View>
+          </View>
+
         </View>
       </KeyboardAwareScrollView>
     </SafeAreaView>

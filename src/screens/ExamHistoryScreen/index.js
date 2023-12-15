@@ -8,11 +8,14 @@ import { useStateContext } from '../../context/StateContext/StateContext';
 import  dummyData  from '../../components/dummyData';
 // import from constants
 import { SIZES, FONTS, COLORS } from "../../constants/theme";
+import Colors from '../../constants/Colors';
 
 const ExamHistoryScreen = () => {
  
   // state for dark mode
   const { colors,isDarkMode } = useStateContext();
+
+  
   // for using styles
   const styles = StyleSheet.create({
     grandParent: {
@@ -20,7 +23,7 @@ const ExamHistoryScreen = () => {
       justifyContent: 'center',
       paddingHorizontal:SIZES.base,
       paddingVertical:SIZES.base,
-
+      backgroundColor:  isDarkMode ? Colors.greenAlpha  : colors.cardBackground,
        
     },
     title: {
@@ -36,7 +39,7 @@ const ExamHistoryScreen = () => {
       padding: 20,
       borderRadius: 10,
       marginBottom: 15,
-      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
+      backgroundColor:  isDarkMode ? "white"  : colors.cardBackground,
       borderRadius:10,
       // elevation: 5, // Add elevation for a card-like shadow
     },

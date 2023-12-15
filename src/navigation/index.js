@@ -58,13 +58,13 @@ import {
   PendingTicketsScreen,
   CompletedTicketsScreen,
   LoadingScreen,
-  HelpScreen,
   LogInScreen,
   ForgetPasswordScreen,
   OtpVerificationScreen,
   SetNewPasswordScreen,
   ProfileScreen,
   SplashScreen,
+  CourseDetailedScreen,
 } from "../screens";
 
 // For Drawer Navigator
@@ -80,36 +80,44 @@ const StackNavigator = ({navigation}) => {
       screenOptions={{
         headerShown: false,
       }}
-    >
+      >
+
+
+     
+     
+     
+     
+       <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
+       <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
        <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
+       <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
        <Stack.Screen name="SplashScreen" component={SplashScreen} /> 
+       <Stack.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} />
+       <Stack.Screen name="TermsAndConditionScreen" component={TermsAndConditionScreen} />
+       <Stack.Screen name="HelpDetailedScreen" component={HelpDetailedScreen} />
+       <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} /> 
+       <Stack.Screen name="CourseDetailedScreen" component={CourseDetailedScreen} />
+       <Stack.Screen name="ClassDetailedScreen" component={ClassDetailedScreen} />
+       <Stack.Screen name="ExamDetailedScreen" component={ExamDetailedScreen} />
        <Stack.Screen name="LogInScreen" component={LogInScreen} />
        <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
-      <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
-       <Stack.Screen name="DashBoardScreen" component={DashBoardScreen} /> 
+       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
        <Stack.Screen name="CommunityProfileScreen" component={CommunityProfileScreen} />
-       <Stack.Screen name="HelpScreen" component={HelpScreen} />
        <Stack.Screen name="ForgetPasswordScreen" component={ForgetPasswordScreen} />
        <Stack.Screen name="SetNewPasswordScreen" component={SetNewPasswordScreen} />
        <Stack.Screen name="OtpVerificationScreen" component={OtpVerificationScreen} />        
        <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen}  initialParams={{ navigation }} />
        <Stack.Screen name="CompletedExamScreen" component={CompletedExamScreen} />
        <Stack.Screen name="ExamHistoryScreen" component={ExamHistoryScreen} />
-       <Stack.Screen name="ExamDetailedScreen" component={ExamDetailedScreen} />
        <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
        <Stack.Screen name="AccountScreen" component={AccountScreen} />
-       
+      
        <Stack.Screen name="ClassesScreen" component={ClassesScreen} />
        <Stack.Screen name="UpcomingClassScreen" component={UpcomingClassScreen} />
        <Stack.Screen name="CompletedClassScreen" component={CompletedClassScreen} />
        <Stack.Screen name="ClassHistoryScreen" component={ClassHistoryScreen} />
-       <Stack.Screen name="ClassDetailedScreen" component={ClassDetailedScreen} />
-       <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
-       <Stack.Screen name="HelpDetailedScreen" component={HelpDetailedScreen} />
-       <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
-       <Stack.Screen name="TermsAndConditionScreen" component={TermsAndConditionScreen} />
-       <Stack.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} />
-       <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
+     
+
        <Stack.Screen name="LibraryDetailedScreen" component={LibraryDetailedScreen} />
        <Stack.Screen name="EventsScreen" component={EventsScreen} />
        <Stack.Screen name="EventDetailedScreen" component={EventDetailedScreen} />
@@ -402,7 +410,7 @@ export default Navigation;
 //         headerShown: false,
 //       }}
 //     >
-//        <Stack.Screen name="DashBoardScreen" component={CustomDrawer} /> 
+//        <Stack.Screen name="DashBoardScreen" component={CustomDrawer} />  
 //       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
 //        <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
 //        <Stack.Screen name="UpcomingExamScreen" component={UpcomingExamScreen} />

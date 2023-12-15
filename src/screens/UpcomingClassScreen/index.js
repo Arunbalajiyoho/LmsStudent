@@ -13,8 +13,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const UpcomingClassScreen = () => {
   return (
-   <SafeAreaView>
-    
+   <SafeAreaView style={{flex:1,}}>
+      <Text>iosdjvviosdjio</Text>
    </SafeAreaView>
   )
 }

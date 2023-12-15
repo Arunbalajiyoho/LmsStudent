@@ -66,8 +66,48 @@
  ]
 
  
+ const notifications =[
 
 
-   export default {screens,accordian,upcomingExam,completed,examHistory}
+  {
+    id: 1,
+    date: "Today",
+    notifications: [
+      {
+        id: 1,
+        image: "https://yt3.googleusercontent.com/ytc/AOPolaQoqnc_0A03GxBRqYSLLMXmWnPyT_0NTn4YZsLqjg=s900-c-k-c0x00ffffff-no-rj",
+        title: "Sun Television uploaded:",
+        description: "futfguohiohiohioyhio",
+      },
+      {
+        id: 2,
+        image: "https://static.wikia.nocookie.net/logopedia/images/7/70/Sun_News.jpg/revision/latest?cb=20180318050509",
+        title: "Sun Television uploaded:",
+        description: "futfguohiohiohioyhio",
+      },
+    ],
+  },
+  {
+    id: 2,
+    date: "Yesterday",
+    notifications: [
+      {
+        id: 3,
+        image: "https://www.behindwoods.com/cmsadmin/images/behindwoods-logo-og-1.jpg",
+        title: "Sun Television uploaded:",
+        description: "futfguohiohiohioyhio",
+      },
+      {
+        id: 4,
+        image: "https://yt3.googleusercontent.com/ytc/AOPolaQXMRuhoZR4c_uOOHoRgRvlJJ2URj9aal1oStuMmWY=s900-c-k-c0x00ffffff-no-rj",
+        title: "Sun Television uploaded:",
+        description: "futfguohiohiohioyhio",
+      },
+    ],
+  },
+ ]
+
+
+   export default {screens,accordian,upcomingExam,completed,examHistory,notifications}
 
 

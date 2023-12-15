@@ -42,9 +42,9 @@ import TicketsScreen from "./TicketsScreen";
 import PendingTicketsScreen from "./PendingTicketsScreen";
 import CompletedTicketsScreen from "./CompletedTicketsScreen";
 import LoadingScreen from "./LoadingScreen";
-import HelpScreen from "./HelpScreen";
 import ProfileScreen from "./ProfileScreen";
 import SplashScreen from "./SplashScreen";
+import CourseDetailedScreen from "./CourseDetailedScreen";
 
 export {
   DashBoardScreen,
@@ -83,12 +83,12 @@ export {
   PendingTicketsScreen,
   CompletedTicketsScreen,
   LoadingScreen,
-  HelpScreen,
   LogInScreen,
   OtpVerificationScreen,
   ForgetPasswordScreen,
   SetNewPasswordScreen,
   ProfileScreen,
   SplashScreen,
+  CourseDetailedScreen,
   
 };

@@ -7,6 +7,7 @@ import  dummyData  from '../../components/dummyData';
 // import from context
 import { useStateContext } from '../../context/StateContext/StateContext';
 import { SIZES } from '../../constants';
+import Colors from '../../constants/Colors';
  
 
 const CompletedExamScreen = ({ navigation }) => {
@@ -18,6 +19,7 @@ const CompletedExamScreen = ({ navigation }) => {
       flex: 1,
       paddingVertical:SIZES.radius,
       alignItems: 'center',
+      backgroundColor: Colors.greenAlpha,
     },
     title: {
       fontSize: 24,
@@ -30,7 +32,7 @@ const CompletedExamScreen = ({ navigation }) => {
       padding: 20,
       borderRadius: 10,
       // elevation: 1,
-      backgroundColor:  isDarkMode ? "#9eb7dc" : colors.cardBackground,
+      backgroundColor:  isDarkMode ? "white"  : colors.cardBackground,
       margin:10
     },
     cardText: {

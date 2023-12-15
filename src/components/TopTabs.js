@@ -4,7 +4,7 @@ import { TouchableOpacity, View, StyleSheet } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { COLORS, SIZES } from "../constants/theme";
 import Accordion from "./Accordion";
-import { dummyData } from "./dummyData";
+import  dummyData  from "./dummyData";
 import {
   MaterialIcons,
   MaterialCommunityIcons,
@@ -80,7 +80,7 @@ const TopTabs = () => {
       <View style={{ flex: 1 }}>
         {activeTab === "Tab1" && (
           <View style={{ marginTop: 20 }}>
-            {dummyData.accordian.map((item, index) => (
+            {dummyData?.accordian.map((item, index) => (
               <Accordion
                 key={index}
                 title={item.title}

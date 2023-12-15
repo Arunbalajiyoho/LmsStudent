@@ -95,7 +95,7 @@ const TabButton = (props) => {
         <Icon
           type={item.type}
           name={item.icon}
-          color={focused ?  COLORS.darkBlue : Colors.transparentBlack7}
+          color={focused ?  COLORS.darkBlue : "#9bcefc"}
         />
       </Animatable.View>
       <Text style={{ color: focused ?  COLORS.darkBlue : Colors.transparentBlack7 }}>
