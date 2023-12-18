@@ -84,13 +84,14 @@ const StackNavigator = ({navigation}) => {
 
 
      
-     
-     
-     
+    
+       <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
+       <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
+       <Stack.Screen name="PaymentDetailedScreen" component={PaymentDetailedScreen} />
+       <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
+       <Stack.Screen name="AccountScreen" component={AccountScreen} />
        <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
        <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
-       <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
-       <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
        <Stack.Screen name="SplashScreen" component={SplashScreen} /> 
        <Stack.Screen name="PrivacyPolicyScreen" component={PrivacyPolicyScreen} />
        <Stack.Screen name="TermsAndConditionScreen" component={TermsAndConditionScreen} />
@@ -110,7 +111,6 @@ const StackNavigator = ({navigation}) => {
        <Stack.Screen name="CompletedExamScreen" component={CompletedExamScreen} />
        <Stack.Screen name="ExamHistoryScreen" component={ExamHistoryScreen} />
        <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
-       <Stack.Screen name="AccountScreen" component={AccountScreen} />
       
        <Stack.Screen name="ClassesScreen" component={ClassesScreen} />
        <Stack.Screen name="UpcomingClassScreen" component={UpcomingClassScreen} />
@@ -121,8 +121,6 @@ const StackNavigator = ({navigation}) => {
        <Stack.Screen name="LibraryDetailedScreen" component={LibraryDetailedScreen} />
        <Stack.Screen name="EventsScreen" component={EventsScreen} />
        <Stack.Screen name="EventDetailedScreen" component={EventDetailedScreen} />
-       <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
-       <Stack.Screen name="PaymentDetailedScreen" component={PaymentDetailedScreen} />
        <Stack.Screen name="CertificatesModelScreen" component={CertificatesModelScreen} />
        <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
        <Stack.Screen name="CalendarScreen" component={CalendarScreen} />

@@ -5,7 +5,9 @@ import { useStateContext } from "../context/StateContext/StateContext";
 
 
 const ImageSwiper = () => {
+
   const { colors } = useStateContext();
+  
   const data = [
       {
         id: 1,

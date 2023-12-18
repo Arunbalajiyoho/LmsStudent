@@ -53,6 +53,8 @@ const HelpDetailedScreen = ({navigation}) => {
       color: COLORS.darkBlue,
     },
   });
+
+
   return (
     <SafeAreaView style={styles.grandParent}>
       <ScrollView>
@@ -78,11 +80,7 @@ const HelpDetailedScreen = ({navigation}) => {
             <TopTabs />
             </View>
            
-           
-
-
-
-
+   
 
         </View>
       </ScrollView>

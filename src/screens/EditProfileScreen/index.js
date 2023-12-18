@@ -101,7 +101,6 @@ const EditProfileScreen = ({ navigation }) => {
   };
 
 
-
    // for using styles.
    const styles = StyleSheet.create({
     grandParent: {

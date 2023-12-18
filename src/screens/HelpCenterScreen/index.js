@@ -13,6 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Colors from "../../constants/Colors";
 
+
 const HelpCenterScreen = () => {
   // for colors
   const { colors, isDarkMode } = useStateContext();
