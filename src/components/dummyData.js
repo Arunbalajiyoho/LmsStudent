@@ -142,8 +142,7 @@ const notifications = [
     image:"https://d28wu8o6itv89t.cloudfront.net/images/visalogopngtransparentpng-1579588235384.png",
     name:"Visa"
    },
-]
-
+];
 
 
 

@@ -86,6 +86,8 @@ const StackNavigator = ({navigation}) => {
      
     
        <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
+       <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
+       <Stack.Screen name="LibraryDetailedScreen" component={LibraryDetailedScreen} />
        <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
        <Stack.Screen name="PaymentDetailedScreen" component={PaymentDetailedScreen} />
        <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
@@ -101,7 +103,6 @@ const StackNavigator = ({navigation}) => {
        <Stack.Screen name="ClassDetailedScreen" component={ClassDetailedScreen} />
        <Stack.Screen name="ExamDetailedScreen" component={ExamDetailedScreen} />
        <Stack.Screen name="LogInScreen" component={LogInScreen} />
-       <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
        <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
        <Stack.Screen name="CommunityProfileScreen" component={CommunityProfileScreen} />
        <Stack.Screen name="ForgetPasswordScreen" component={ForgetPasswordScreen} />
@@ -118,7 +119,6 @@ const StackNavigator = ({navigation}) => {
        <Stack.Screen name="ClassHistoryScreen" component={ClassHistoryScreen} />
      
 
-       <Stack.Screen name="LibraryDetailedScreen" component={LibraryDetailedScreen} />
        <Stack.Screen name="EventsScreen" component={EventsScreen} />
        <Stack.Screen name="EventDetailedScreen" component={EventDetailedScreen} />
        <Stack.Screen name="CertificatesModelScreen" component={CertificatesModelScreen} />

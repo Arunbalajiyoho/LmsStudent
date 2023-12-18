@@ -20,6 +20,7 @@ import { useStateContext } from "../../context/StateContext/StateContext";
 
 const ExamsScreen = ({ navigation }) => {
   // state for darkmode
+
   const { colors,isDarkMode } = useStateContext();
   // state for tabs
   const [activeTab, setActiveTab] = useState("Upcoming Exams");
@@ -111,7 +112,7 @@ const ExamsScreen = ({ navigation }) => {
         <Button
           mode={activeTab === "Completed Exams" ? "contained" : "text"}
           onPress={() => setActiveTab("Completed Exams")}
-          style={{
+          style={{    
             width: "33%",
             backgroundColor:
               activeTab === "Completed Exams" ? COLORS.darkBlue : "transparent",
