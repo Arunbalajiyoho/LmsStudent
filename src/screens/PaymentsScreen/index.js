@@ -46,48 +46,51 @@ const PaymentsScreen = ({ navigation }) => {
     setSelectedPayment((prevSelected) => (prevSelected === paymentName ? null : paymentName));
   };
 
+  
 
   const handleConfirmPayment = () => {
     // Handle the logic for confirming the selected payment
     console.log("Confirmed Payment:", selectedPayment);
 
-    Alert.alert("Payment Successful", "Thank you for your payment!", [
-      { text: "OK", onPress: () => console.log("OK Pressed") },
-    ]);
 
+    
+
+    // Show a popup with the text "Payment Successful" and a "Back" button
+    Alert.alert("Payment Successful", "Thank you for your payment!", [
+      { text: "OK", onPress: () =>navigation.navigate("PaymentDetailedScreen")},
+      {
+        text: "Back",
+        onPress: () => {
+          console.log("Back Pressed");
+          // Add any logic to navigate or perform actions when the "Back" button is pressed
+        },
+      },
+    ]);
   };
 
   // for using styles.
   const styles = StyleSheet.create({
     grandParent: {
       flex: 1,
-      backgroundColor:colors.background,
+      backgroundColor: isDarkMode ? Colors.greenAlpha : colors.background,
       paddingHorizontal: SIZES.radius,
       paddingVertical: SIZES.radius,
     },
     header: {
       flexDirection: "row",
       alignItems: "center",
-      marginBottom: SIZES.padding,
     },
     heading: {
       fontSize: SIZES.h2,
       fontWeight: "bold",
-      marginLeft: SIZES.base,
+      marginLeft: SIZES.radius,
       color: colors.textColor,
     },
     back: {
-      backgroundColor: COLORS.lightblue,
-      padding: SIZES.radius,
+      marginRight: SIZES.base,
+      backgroundColor: colors.iconBackground,
+      padding: SIZES.base,
       borderRadius: 10,
-      color: COLORS.darkBlue,
-    },
-    dashedLine: {
-      marginTop: 10,
-      borderWidth: 0.5,
-      borderStyle: "dotted",
-      borderColor: "grey",
-      marginBottom: SIZES.padding,
     },
     logos: {
       fontSize: SIZES.body3,
@@ -116,14 +119,17 @@ const PaymentsScreen = ({ navigation }) => {
         backgroundColor={colors.background}
       />
       <View style={styles.header}>
-          <TouchableOpacity onPress={() => navigation.goBack()} style={styles.back}>
-            <FontAwesome5 name="chevron-left" size={16} color={COLORS.darkBlue} />
-          </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.back}
+        >
+          <Ionicons name="ios-arrow-back" size={24} color={COLORS.blue} />
+        </TouchableOpacity>
 
-          <View>
-            <Text style={styles.heading}> Payments</Text>
-          </View>
+        <View>
+          <Text style={styles.heading}>Payments</Text>
         </View>
+      </View>
       <View
         style={{
           backgroundColor: colors.cardBackground,
@@ -132,7 +138,6 @@ const PaymentsScreen = ({ navigation }) => {
           padding: SIZES.radius,
           borderRadius: 20,
           marginTop: SIZES.padding,
-          elevation:5,
         }}
       >
         <Text style={{ fontWeight: "bold", fontSize: SIZES.body3 }}>Total</Text>
@@ -163,7 +168,6 @@ const PaymentsScreen = ({ navigation }) => {
                 justifyContent: "space-between",
                 backgroundColor: colors.cardBackground,
                 borderRadius: 15,
-                elevation:4,
               }}
             >
               <View

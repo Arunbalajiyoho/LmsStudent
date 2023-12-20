@@ -87,6 +87,10 @@ const UpcomingExamScreen = ({navigation}) => {
       </View>
       </TouchableOpacity>
         ))}
+
+    
+
+
     </SafeAreaView>
   )
 }

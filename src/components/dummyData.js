@@ -74,8 +74,6 @@ const screens = [
   },
 ];
 
-
-
 const notifications = [
   {
     id: 1,
@@ -121,6 +119,8 @@ const notifications = [
 
 ];
 
+
+
  const payment = [
   {
   id:1,
@@ -144,6 +144,46 @@ const notifications = [
    },
 ];
 
+ const completedclass = [
+  {
+    id: 1,
+    coursename: "Web Development",
+    timing: "5 hrs",
+    status: "completed",
+    inst:"Sanjay",
+    
+  },
+  {
+    id: 2,
+    coursename: "App",
+    timing: "3hrs",
+    status: "completed",
+    inst:"Aravindh"
+  },
+];
+
+
+const  events = [
+  {
+  id:1,
+  image:"https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_1280.jpg",
+  name:"React Development Classes DVGFHFHFB VFBFG FDSGFHF",
+  des:"React is a JavaScript-based UI development library. Although React is a library rather than a language, it is widely used in web development. The library first appeared in May 2013 and is now one of the most commonly used frontend libraries for web development.",
+  time:"3 hrs",
+  Date:"29/03/23"
+   },
+   {
+    id:2,
+    image:"https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539_640.jpg",
+    name:"Reactotron",
+  des:"A desktop app for inspecting React Native apps on various platforms, including iOS, Android, Linux, and Windows. It monitors API activity, tracks errors, action dispatch, and Redux store interactions.",
+  time:"4 hrs",
+  Date:"03/05/24"
+   },
+  
+  
+];
+
 
 
 
@@ -158,4 +198,6 @@ export default {
   examHistory,
   notifications,
   payment,
+  completedclass,
+  events
 };

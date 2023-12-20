@@ -37,6 +37,7 @@ import Animated from "react-native-reanimated";
 import CourseCard from "../../components/CourseCard ";
 import dummyData from "../../components/dummyData";
 
+
 const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
   // for using colors from context
   const { colors, isDarkMode } = useStateContext();
@@ -186,7 +187,7 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
   ];
 
   const renderCourseCard = (course, index) => (
-    <TouchableOpacity
+    <TouchableOpacity onPress={() => navigation.navigate("CourseDetailedScreen")}
       key={index}
       style={[styles.courseCard, { backgroundColor: course.backgroundColor }]}
     >
@@ -224,15 +225,15 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
                 <Text style={styles.userEmail}>{student.email}</Text>
               </View>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("NotificationScreen")}>
               <Entypo name="notification" size={28} color={COLORS.darkBlue} />
             </TouchableOpacity>
           </View>
           <View style={styles.dashedLine} />
 
-          <View style={styles.coursesContainer}>
+          <TouchableOpacity style={styles.coursesContainer}>
             {courses.map((course, index) => renderCourseCard(course, index))}
-          </View>
+          </TouchableOpacity>
 
           <View
             style={{

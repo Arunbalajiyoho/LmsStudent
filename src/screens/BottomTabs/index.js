@@ -30,8 +30,7 @@ const TabArr = [
     component: DashBoardScreen,
     color: COLORS.darkBlue,
     alphaClr:COLORS.darkBlue,
-  },
-   
+   },
     {
       route: "ClassesScreen",
       label: "Classes",

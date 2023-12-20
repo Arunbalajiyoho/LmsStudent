@@ -12,7 +12,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
   return (
    <SafeAreaView>
     

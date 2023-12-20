@@ -8,7 +8,7 @@ import Navigation from "../../navigation";
 
 const LibraryDetailedScreen = ({ route }) => {
 
-  const { course } = route.params;
+  const  course  = route.params;
 
 
   const styles = StyleSheet.create({

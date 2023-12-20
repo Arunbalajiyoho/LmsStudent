@@ -18,7 +18,8 @@ import BottomTabs from "../screens/BottomTabs";
 // import from react navigation drawer
 import { createDrawerNavigator,DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 // import from expo vector icons
-import { AntDesign, Entypo } from "@expo/vector-icons";
+import { AntDesign, Entypo, MaterialIcons,Feather, } from "@expo/vector-icons";
+
 
 // import from Screens
 import {
@@ -83,13 +84,16 @@ const StackNavigator = ({navigation}) => {
       >
 
 
-     
-    
+
+
+
+
+       <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
+       <Stack.Screen name="AnswerPaperScreen" component={AnswerPaperScreen} />
+       <Stack.Screen name="PaymentDetailedScreen" component={PaymentDetailedScreen} />
+       <Stack.Screen name="LibraryDetailedScreen" component={LibraryDetailedScreen} />
        <Stack.Screen name="LibraryScreen" component={LibraryScreen} />
        <Stack.Screen name="ExamsScreen" component={ExamsScreen} />
-       <Stack.Screen name="LibraryDetailedScreen" component={LibraryDetailedScreen} />
-       <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
-       <Stack.Screen name="PaymentDetailedScreen" component={PaymentDetailedScreen} />
        <Stack.Screen name="PaymentsScreen" component={PaymentsScreen} />
        <Stack.Screen name="AccountScreen" component={AccountScreen} />
        <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
@@ -112,7 +116,9 @@ const StackNavigator = ({navigation}) => {
        <Stack.Screen name="CompletedExamScreen" component={CompletedExamScreen} />
        <Stack.Screen name="ExamHistoryScreen" component={ExamHistoryScreen} />
        <Stack.Screen name="CommunityScreen" component={CommunityScreen} />
-      
+
+
+
        <Stack.Screen name="ClassesScreen" component={ClassesScreen} />
        <Stack.Screen name="UpcomingClassScreen" component={UpcomingClassScreen} />
        <Stack.Screen name="CompletedClassScreen" component={CompletedClassScreen} />
@@ -124,7 +130,6 @@ const StackNavigator = ({navigation}) => {
        <Stack.Screen name="CertificatesModelScreen" component={CertificatesModelScreen} />
        <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
        <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
-       <Stack.Screen name="AnswerPaperScreen" component={AnswerPaperScreen} />
        <Stack.Screen name="ResultScreen" component={ResultScreen} />
        <Stack.Screen name="ResultDetailedScreen" component={ResultDetailedScreen} />
        <Stack.Screen name="TicketsScreen" component={TicketsScreen} />
@@ -215,6 +220,24 @@ const CustomDrawerContent = (props) => {
       label="Account"
       icon={({ color, size }) => <AntDesign name="setting" size={size} color={color} />}
       onPress={() => props.navigation.navigate("Account")}
+    />
+
+<DrawerItem
+      label="Help"
+      icon={({ color, size }) => <Entypo name="help" size={size} color={color} />}
+      onPress={() => props.navigation.navigate("HelpDetailedScreen")}
+    />
+
+<DrawerItem
+      label="Events"
+      icon={({ color, size }) => <MaterialIcons name="event" size={size} color={color} />}
+      onPress={() => props.navigation.navigate("EventsScreen")}
+    />
+
+<DrawerItem
+      label="Answer"
+      icon={({ color, size }) => <Feather name="paperclip" size={size} color={color} />}
+      onPress={() => props.navigation.navigate("AnswerPaperScreen")}
     />
 
       <View style={styles.dashedLine} />
