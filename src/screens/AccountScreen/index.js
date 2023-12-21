@@ -26,6 +26,7 @@ import {
 import { StatusBar } from "react-native";
 
 const AccountScreen = ({ navigation }) => {
+
   const { colors, isDarkMode } = useStateContext();
 
   const user = require("../../../assets/images/Arunbalaji.jpg");

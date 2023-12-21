@@ -1,3 +1,5 @@
+
+
 const accordian = [
   {
     id: 1,
@@ -30,6 +32,7 @@ const accordian = [
       " Upload courses. To start training, you need to add materials to the LMS. .",
   },
 ];
+
 
 const upcomingExam = [
   {
