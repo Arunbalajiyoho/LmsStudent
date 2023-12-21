@@ -21,6 +21,7 @@ import { createDrawerNavigator,DrawerContentScrollView, DrawerItem } from "@reac
 import { AntDesign, Entypo, MaterialIcons,Feather, } from "@expo/vector-icons";
 
 
+
 // import from Screens
 import {
   DashBoardScreen,
@@ -33,7 +34,7 @@ import {
   CommunityProfileScreen,
   AccountScreen,
   EditProfileScreen,
-  ClassesScreen,
+  ClassesScreen,     
   UpcomingClassScreen,
   CompletedClassScreen,
   ClassHistoryScreen,
@@ -88,6 +89,9 @@ const StackNavigator = ({navigation}) => {
 
 
 
+
+
+       <Stack.Screen name="CertificatesModelScreen" component={CertificatesModelScreen} />
        <Stack.Screen name="BottomTabs" component={BottomTabs} /> 
        <Stack.Screen name="AnswerPaperScreen" component={AnswerPaperScreen} />
        <Stack.Screen name="PaymentDetailedScreen" component={PaymentDetailedScreen} />
@@ -127,7 +131,6 @@ const StackNavigator = ({navigation}) => {
 
        <Stack.Screen name="EventsScreen" component={EventsScreen} />
        <Stack.Screen name="EventDetailedScreen" component={EventDetailedScreen} />
-       <Stack.Screen name="CertificatesModelScreen" component={CertificatesModelScreen} />
        <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
        <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
        <Stack.Screen name="ResultScreen" component={ResultScreen} />

@@ -12,6 +12,7 @@ import {
   Entypo,
   AntDesign,
 } from "@expo/vector-icons";
+
 import Colors from "../constants/Colors";
 import { useStateContext } from "../context/StateContext/StateContext";
 
@@ -79,7 +80,7 @@ const TopTabs = () => {
       {/* Content for each tab */}
       <View style={{ flex: 1 }}>
         {activeTab === "Tab1" && (
-          <View style={{ marginTop: 20 }}>
+          <View style={{ marginTop: 20,paddingVertical:20 }}>
             {dummyData?.accordian.map((item, index) => (
               <Accordion
                 key={index}
@@ -175,7 +176,7 @@ const TopTabs = () => {
                     backgroundColor: colors.cardBackground,
                   }}
                 >
-                  <AntDesign name="instagram" size={24} color={  COLORS.darkBlue}  />
+                  <AntDesign name="instagram" size={24} color={COLORS.darkBlue}  />
                   <Text style={styles.logos}>instagram </Text>
                 </View>
               </TouchableOpacity>

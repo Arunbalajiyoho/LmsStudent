@@ -11,6 +11,24 @@ const accordian = [
     content:
       " Upload courses. To start training, you need to add materials to the LMS. .",
   },
+  {
+    id: 3,
+    title: "How to use  Learn Management",
+    content:
+      " Upload courses. To start training, you need to add materials to the LMS. .",
+  },
+  {
+    id: 4,
+    title: "How to use  Learn Management",
+    content:
+      " Upload courses. To start training, you need to add materials to the LMS. .",
+  },
+  {
+    id: 5,
+    title: "How to use  Learn Management",
+    content:
+      " Upload courses. To start training, you need to add materials to the LMS. .",
+  },
 ];
 
 const upcomingExam = [
@@ -184,6 +202,26 @@ const  events = [
   
 ];
 
+  // Dummy certificate data
+  const certificates = [
+    {
+      title: "Certificate of Completion",
+      description: "Awarded for completing the Programming Basics course.",
+      date: "June 15, 2023",
+      imageUrl: "https://marketplace.canva.com/EAFNlUJs5g4/2/0/1600w/canva-white-simple-certificate-of-appreciation-Fcz7KkZ5YaU.jpg", // Replace with actual image URL
+      studentName:"ArunBalaji",
+      date:"01/01/2000",
+   
+    },
+    // {
+    //   title: "Web Development Masterclass Certificate",
+    //   description: "Congratulations on completing the Web Development Masterclass!",
+    //   date: "July 5, 2023",
+    //   imageUrl: "https://img.freepik.com/premium-vector/modern-certificate-achievement-appreciation-template-design_555116-258.jpg", // Replace with actual image URL
+    // },
+    // Add more dummy certificates
+  ];
+
 
 
 
@@ -199,5 +237,6 @@ export default {
   notifications,
   payment,
   completedclass,
-  events
+  events,
+  certificates,
 };

@@ -45,7 +45,7 @@ const EventsScreen = ({ navigation }) => {
       color: colors.textColor,
     },
     back: {
-      backgroundColor: colors.iconBackground,
+      backgroundColor: COLORS.lightblue,
       padding: SIZES.base,
       borderRadius: 10,
     },
@@ -67,7 +67,7 @@ const EventsScreen = ({ navigation }) => {
               <Ionicons
                 name="ios-arrow-back"
                 size={24}
-                color={Colors.primary}
+                color={COLORS.darkBlue}
               />
             </TouchableOpacity>
 
@@ -111,7 +111,7 @@ const EventsScreen = ({ navigation }) => {
                   </Text>
                   <TouchableOpacity
                     style={{
-                      backgroundColor: "red",
+                      backgroundColor: COLORS.lightblue,
                       borderRadius: 5,
                       padding: 4,
                       alignItems: "center",

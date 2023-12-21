@@ -23,7 +23,7 @@ const ClassesScreen = ({ navigation }) => {
   // state for darkmode
   const { colors,isDarkMode } = useStateContext();
   // state for tabs
-  const [activeTab, setActiveTab] = useState("Upcoming Exams");
+  const [activeTab, setActiveTab] = useState("Upcoming Classes");
 
   // function for rendering screens
   const renderScreen = () => {

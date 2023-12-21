@@ -12,6 +12,8 @@ import { useStateContext } from "../../context/StateContext/StateContext";
 import { Ionicons } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
 const EventDetailedScreen = ({ navigation }) => {
+
+
   // for colors
   const { colors, isDarkMode } = useStateContext();
 
@@ -27,6 +29,7 @@ const EventDetailedScreen = ({ navigation }) => {
       flexDirection: "row",
       alignItems: "center",
     },
+
     heading: {
       fontSize: SIZES.h2,
       fontWeight: "bold",
@@ -34,7 +37,8 @@ const EventDetailedScreen = ({ navigation }) => {
       color: colors.textColor,
     },
     back: {
-      backgroundColor: colors.iconBackground,
+      backgroundColor: COLORS.lightblue,
+
       padding: SIZES.base,
       borderRadius: 10,
     },
@@ -44,6 +48,7 @@ const EventDetailedScreen = ({ navigation }) => {
     },
     titlehead: {
       marginTop: SIZES.radius,
+
       backgroundColor: Colors.greenAlpha,
       padding: SIZES.padding,
       borderRadius: 20,
@@ -73,6 +78,7 @@ const EventDetailedScreen = ({ navigation }) => {
       marginTop: SIZES.padding,
       flexDirection: "row",
     },
+
     notify: {
       // borderWidth:1,
       backgroundColor: Colors.lightRed,
@@ -89,6 +95,7 @@ const EventDetailedScreen = ({ navigation }) => {
 
       padding: 10,
     },
+
     enroll: {
       backgroundColor: COLORS.violet,
       height: 50,
@@ -99,6 +106,7 @@ const EventDetailedScreen = ({ navigation }) => {
       marginHorizontal: 20,
       marginTop: 50,
     },
+
     bottomsheet: {
       backgroundColor: colors.cardBackground,
       borderTopEndRadius: 25,
@@ -117,7 +125,7 @@ const EventDetailedScreen = ({ navigation }) => {
     exam1: {
       fontSize: SIZES.h3,
       color: colors.textColor,
-      marginVertical:SIZES.base
+      marginVertical: SIZES.base,
     },
     cardContainer: {
       flexDirection: "row",
@@ -154,7 +162,7 @@ const EventDetailedScreen = ({ navigation }) => {
             onPress={() => navigation.goBack()}
             style={styles.back}
           >
-            <Ionicons name="ios-arrow-back" size={24} color="black" />
+            <Ionicons name="ios-arrow-back" size={24} color={COLORS.darkBlue} />
           </TouchableOpacity>
 
           <View>
