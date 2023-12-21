@@ -33,22 +33,10 @@ const PrivacyPolicyScreen = ({ navigation }) => {
       color: colors.textColor,
     },
     back: {
-      header: {
-        flexDirection: "row",
-        alignItems: "center",
-      },
-      heading: {
-        fontSize: SIZES.h2,
-        fontWeight: "bold",
-        marginLeft: SIZES.base,
-        color: colors.textColor,
-      },
-      back: {
-        backgroundColor: COLORS.lightblue,
-        padding: SIZES.base,
-        borderRadius: 10,
-        color: COLORS.darkBlue,
-      },
+      backgroundColor: COLORS.lightblue,
+      padding: SIZES.base,
+      borderRadius: 10,
+      color: COLORS.darkBlue,
     },
     dashedLine: {
       marginTop: 10,

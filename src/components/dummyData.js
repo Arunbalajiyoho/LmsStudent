@@ -225,6 +225,26 @@ const  events = [
 
 
 
+  
+const studentDetails = [
+
+{
+  name: "Arunbalaji",
+  email: "Arunbalaji@.com",
+  age: 25,
+  profileImage: "https://www.shutterstock.com/image-photo/portrait-cheerful-male-international-indian-260nw-2071252046.jpg",
+  grade: "A",
+  enrolledCourses: ["Programming 101", "Web Development Basics", "Mathematics Fundamentals"],
+
+  // Add more details as needed
+},
+
+
+];
+
+
+
+
 
 
 
@@ -239,4 +259,5 @@ export default {
   completedclass,
   events,
   certificates,
+  studentDetails,
 };

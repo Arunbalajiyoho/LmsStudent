@@ -25,8 +25,7 @@ const CertificatesModelScreen = ({ navigation }) => {
     container: {
       flex: 1,
       padding: 10,
-      justifyContent:"center",
-      
+      justifyContent: "center",
     },
     header: {
       flexDirection: "row",
@@ -37,7 +36,6 @@ const CertificatesModelScreen = ({ navigation }) => {
       fontWeight: "bold",
       marginLeft: SIZES.radius,
       color: colors.textColor,
-      
     },
     back: {
       backgroundColor: COLORS.lightblue,
@@ -50,16 +48,16 @@ const CertificatesModelScreen = ({ navigation }) => {
       borderRadius: 10,
       padding: SIZES.padding,
       marginBottom: SIZES.base,
-      paddingVertical:SIZES.padding
+      paddingVertical: SIZES.padding,
     },
     certificateTitle: {
-      fontSize:SIZES.h2,
+      fontSize: SIZES.h2,
       fontWeight: "bold",
       marginBottom: SIZES.base,
       textAlign: "center",
     },
     certificateDescription: {
-      fontSize:SIZES.body3,
+      fontSize: SIZES.body3,
       marginBottom: SIZES.base,
       textAlign: "center",
     },
@@ -74,7 +72,7 @@ const CertificatesModelScreen = ({ navigation }) => {
       resizeMode: "cover",
       borderRadius: 10,
       marginBottom: SIZES.base,
-      marginTop:SIZES.radius
+      marginTop: SIZES.radius,
     },
   });
 
@@ -96,12 +94,7 @@ const CertificatesModelScreen = ({ navigation }) => {
 
         <View style={{ marginVertical: SIZES.radius }}>
           {dummyData.certificates.map((certificate, index) => (
-            <TouchableOpacity
-              key={index}
-              onPress={() => {
-               
-              }}
-            >
+            <TouchableOpacity key={index} onPress={() => {}}>
               <View style={styles.certificateContainer}>
                 <Text style={styles.certificateTitle}>{certificate.title}</Text>
                 <Text style={styles.certificateDescription}>
