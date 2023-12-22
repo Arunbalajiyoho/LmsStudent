@@ -28,7 +28,7 @@ import {
   MaterialIcons,
   Feather,
   FontAwesome,
-  MaterialCommunityIcons, 
+  MaterialCommunityIcons,
 } from "@expo/vector-icons";
 // import from Screens
 import {
@@ -90,12 +90,15 @@ const StackNavigator = ({ navigation }) => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
+
+      <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
+
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
 
       <Stack.Screen name="TicketsScreen" component={TicketsScreen} />
 
-      <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
       <Stack.Screen
         name="PendingTicketsScreen"
         component={PendingTicketsScreen}
@@ -191,7 +194,6 @@ const StackNavigator = ({ navigation }) => {
         name="EventDetailedScreen"
         component={EventDetailedScreen}
       />
-      <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
       <Stack.Screen name="ResultScreen" component={ResultScreen} />
       <Stack.Screen
         name="ResultDetailedScreen"
@@ -337,14 +339,16 @@ const CustomDrawerContent = (props) => {
       <DrawerItem
         label="Certificate"
         icon={({ color, size }) => (
-          <MaterialCommunityIcons name="certificate-outline" size={24} color="black" />
+          <MaterialCommunityIcons
+            name="certificate-outline"
+            size={24}
+            color="black"
+          />
         )}
         onPress={() => props.navigation.navigate("CertificatesModelScreen")}
       />
-     
 
       <View style={styles.dashedLine} />
-
     </DrawerContentScrollView>
   );
 };
@@ -417,15 +421,6 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
-
-
-
-
-
-
-
-
 
 // // import from react
 // import React from "react";
