@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useRef } from "react";
 import {
   View,
   Text,
@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -14,9 +15,19 @@ import { COLORS, SIZES } from "../../constants/theme";
 import { FontAwesome5 } from "@expo/vector-icons";
 import dummyData from "../../components/dummyData";
 
+
+
 const ProfileScreen = () => {
   const { colors } = useStateContext();
   const navigation = useNavigation();
+
+  const updateProfile = (updatedProfile) => {
+    // Implement your logic to update the profile data
+    console.log("Updated Profile:", updatedProfile);
+    // For simplicity, you can update the state or redux store with the new profile data
+  };
+
+
 
   const styles = StyleSheet.create({
     grandParent: {
@@ -52,6 +63,7 @@ const ProfileScreen = () => {
       fontSize: 18,
       marginBottom: 12,
       color: colors.textColor,
+    
     },
     editButton: {
       backgroundColor: COLORS.darkBlue,
@@ -108,14 +120,23 @@ const ProfileScreen = () => {
                   - {course}
                 </Text>
               ))}
-             
             </View>
           </View>
         ))}
 
-        <TouchableOpacity style={styles.editButton} onPress={goToEditProfile}>
+        <TouchableOpacity 
+          style={styles.editButton}
+          onPress={() => {
+            navigation.navigate("EditProfileScreen", { updateProfile });
+          }}
+        >
           <Text style={styles.editText}>Edit Profile</Text>
+
         </TouchableOpacity>
+
+       
+      
+
       </ScrollView>
     </SafeAreaView>
   );

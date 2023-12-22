@@ -26,7 +26,7 @@ const ClassesScreen = ({ navigation }) => {
   const [activeTab, setActiveTab] = useState("Upcoming Classes");
 
   // function for rendering screens
-  const renderScreen = () => {
+  const renderScreen = React.useMemo(() => {
     switch (activeTab) {
       case "Upcoming Classes":
         return <UpcomingClassScreen />;
@@ -37,7 +37,7 @@ const ClassesScreen = ({ navigation }) => {
       default:
         return null;
     }
-  };
+  }, [activeTab]); // Re-render only when activeTab changes
 
   // For using styles
   const styles = StyleSheet.create({
@@ -142,7 +142,8 @@ const ClassesScreen = ({ navigation }) => {
         </Button>
       </View>
 
-      {renderScreen()}
+           {renderScreen}
+
     </SafeAreaView>
   );
 };

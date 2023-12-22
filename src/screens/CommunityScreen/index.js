@@ -20,7 +20,7 @@ import Colors from "../../constants/Colors";
 // import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
 // import from expo vector icons
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, Entypo} from "@expo/vector-icons";
 
 // for store the key
 const STORAGE_KEY = "Messages";
@@ -111,6 +111,8 @@ const CommunityScreen = ({ navigation }) => {
       }, 1000);
     }
   };
+
+ 
 
   // for using colors and dark mode
   const { colors, isDarkMode } = useStateContext();
@@ -301,10 +303,11 @@ const CommunityScreen = ({ navigation }) => {
           <FontAwesome
             name="send-o"
             size={26}
-            color={COLORS.white}
+            color={COLORS.darkBlue}
             style={{ paddingLeft: 5 }}
-          />
+          /> 
         </TouchableOpacity>
+
       </View>
     </View>
   );

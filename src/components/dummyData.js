@@ -6,7 +6,8 @@ const accordian = [
     title: "What is Learn Management",
     content:
       "An LMS enables you to create, manage, and deliver eLearning courses the same way word processors (like Microsoft Word) help you write documents and email servers (like Gmail) help you manage your email.",
-  },
+  
+    },
   {
     id: 2,
     title: "How to use  Learn Management",
@@ -27,10 +28,11 @@ const accordian = [
   },
   {
     id: 5,
-    title: "How to use  Learn Management",
+    title: "How to use Learn Management",
     content:
       " Upload courses. To start training, you need to add materials to the LMS. .",
   },
+ 
 ];
 
 
@@ -165,6 +167,7 @@ const notifications = [
    },
 ];
 
+
  const completedclass = [
   {
     id: 1,
@@ -216,13 +219,7 @@ const  events = [
       date:"01/01/2000",
    
     },
-    // {
-    //   title: "Web Development Masterclass Certificate",
-    //   description: "Congratulations on completing the Web Development Masterclass!",
-    //   date: "July 5, 2023",
-    //   imageUrl: "https://img.freepik.com/premium-vector/modern-certificate-achievement-appreciation-template-design_555116-258.jpg", // Replace with actual image URL
-    // },
-    // Add more dummy certificates
+  
   ];
 
 
@@ -247,6 +244,22 @@ const studentDetails = [
 
 
 
+const paymentgateway =[
+  {
+    id:1,
+    name:"student1",
+    course:"aviation",
+    description:""
+  },
+  {
+    id:2,
+    name:"student2",
+    course:"aws"
+  }
+
+]
+
+
 
 
 
@@ -263,4 +276,5 @@ export default {
   events,
   certificates,
   studentDetails,
+  paymentgateway,
 };

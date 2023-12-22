@@ -84,6 +84,15 @@ const StackNavigator = ({ navigation }) => {
         headerShown: false,
       }}
     >
+
+
+
+
+
+
+
+<Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
+
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
 
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
@@ -172,7 +181,6 @@ const StackNavigator = ({ navigation }) => {
         name="EventDetailedScreen"
         component={EventDetailedScreen}
       />
-      <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
       <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
       <Stack.Screen name="ResultScreen" component={ResultScreen} />
       <Stack.Screen

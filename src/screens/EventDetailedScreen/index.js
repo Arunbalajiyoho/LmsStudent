@@ -14,6 +14,7 @@ import Colors from "../../constants/Colors";
 const EventDetailedScreen = ({ navigation }) => {
 
 
+  
   // for colors
   const { colors, isDarkMode } = useStateContext();
 

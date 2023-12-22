@@ -1,3 +1,5 @@
+// EditProfileScreen.js
+
 import React, { useState } from "react";
 import { View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -5,8 +7,8 @@ import { useNavigation } from "@react-navigation/native";
 import { COLORS, SIZES } from "../../constants/theme";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-const EditProfileScreen = () => {
-  const navigation = useNavigation();
+const EditProfileScreen = ({ route, navigation }) => {
+  const { updateProfile } = route.params;
 
   const [editedProfile, setEditedProfile] = useState({
     name: "John Doe",
@@ -73,6 +75,7 @@ const EditProfileScreen = () => {
     // Implement your logic to save the edited profile data
     // For simplicity, we're just logging the data for now
     console.log("Saved Profile:", editedProfile);
+    updateProfile(editedProfile); // Call the updateProfile callback with the new data
     navigation.goBack(); // Navigate back to the Profile screen after saving
   };
 

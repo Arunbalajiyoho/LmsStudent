@@ -37,6 +37,7 @@ const TopTabs = () => {
     },
   });
 
+
   return (
     <View style={{ flex: 1, paddingHorizontal: SIZES.base }}>
       {/* Custom Tab Buttons */}
@@ -63,6 +64,7 @@ const TopTabs = () => {
           >
             FAQ
           </Button>
+
           <Button
             mode={activeTab === "Tab2" ? "contained" : "text"}
             onPress={() => handleTabChange("Tab2")}
@@ -75,6 +77,7 @@ const TopTabs = () => {
           >
             Contact Us
           </Button>
+          
         </View>
       </View>
       {/* Content for each tab */}

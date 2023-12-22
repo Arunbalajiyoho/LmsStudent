@@ -7,7 +7,6 @@ import dummyData from "../../components/dummyData";
 import Navigation from "../../navigation";
 
 const LibraryDetailedScreen = ({ route }) => {
-
   const  course  = route.params;
 
 
@@ -47,6 +46,7 @@ const LibraryDetailedScreen = ({ route }) => {
   });
 
 
+  
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
