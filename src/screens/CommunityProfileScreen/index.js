@@ -26,6 +26,8 @@ import {
 } from "@expo/vector-icons";
 import { StatusBar } from "react-native";
 
+
+
 const CommunityProfileScreen = ({navigation}) => {
   // for colors
   const { colors } = useStateContext();
@@ -64,6 +66,9 @@ const CommunityProfileScreen = ({navigation}) => {
   };
   const { name, course, batch, image } = dummyData.student;
 
+
+
+  
   // styles
   const styles = StyleSheet.create({
     grandParent: {

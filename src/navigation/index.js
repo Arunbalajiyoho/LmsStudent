@@ -90,11 +90,10 @@ const StackNavigator = ({ navigation }) => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
-
       <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
 
-      <Stack.Screen name="BottomTabs" component={BottomTabs} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
 
       <Stack.Screen name="TicketsScreen" component={TicketsScreen} />

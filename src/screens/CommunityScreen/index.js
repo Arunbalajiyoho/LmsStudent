@@ -305,7 +305,7 @@ const CommunityScreen = ({ navigation }) => {
             size={26}
             color={COLORS.darkBlue}
             style={{ paddingLeft: 5 }}
-          /> 
+          />  
         </TouchableOpacity>
 
       </View>

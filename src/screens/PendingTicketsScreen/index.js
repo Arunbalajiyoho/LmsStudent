@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import { FontAwesome5 } from "@expo/vector-icons";
 import { COLORS, SIZES } from "../../constants/theme";
 import { useStateContext } from "../../context/StateContext/StateContext";
@@ -44,13 +43,10 @@ const PendingTicketsScreen = () => {
       fontSize: 16,
       color: "#555",
     },
-
-   
   });
 
   return (
     <SafeAreaView style={styles.container}>
-     
       <ScrollView style={styles.scrollView}>
         {pendingTickets.map((ticket) => (
           <TouchableOpacity

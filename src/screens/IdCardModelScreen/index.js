@@ -13,26 +13,28 @@ import { useStateContext } from "../../context/StateContext/StateContext";
 import Colors from "../../constants/Colors";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-const IdCardModelScreen = () => {
+
+const IdCardModelScreen = ({navigation}) => {
   const studentData = {
     name: "John Doe",
     course: "Computer Science",
-    studentID: "123456",
-    contactNumber: "123-456-7890",
-    enrollmentDate: "01/01/2023",
+    studentID: "YT0502",
+    contactNumber: "6380730461",
+    enrollmentDate: "01/01/2000",
     additionalFrontFields: [
       { label: "name", value: "Value1" },
       { label: "Department", value: "Value2" },
     ],
     additionalBackFields: [
-      { label: "Field3", value: "Value3" },
-      { label: "Field4", value: "Value4" },
+      { label: "Dept", value: "Value3" },
+      { label: "Dept", value: "Value4" },
     ],
   };
 
   const { colors, isDarkMode } = useStateContext();
   const [showBack, setShowBack] = useState(false);
   const rotateValue = useRef(new Animated.Value(0)).current;
+
 
   const rotateCard = () => {
     setShowBack(!showBack);
@@ -115,8 +117,6 @@ const IdCardModelScreen = () => {
     },
   });
 
-
-
   const cardContent = (
     <>
       <Text style={styles.title}>
@@ -172,11 +172,10 @@ const IdCardModelScreen = () => {
     transform: [{ rotateY: rotateInterpolate }],
   };
 
-  return (
-    
-    <SafeAreaView style={styles.container}>
-  
 
+  return (
+
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity
         style={[styles.card, showBack ? backAnimatedStyle : frontAnimatedStyle]}
         onPress={rotateCard}
@@ -187,8 +186,6 @@ const IdCardModelScreen = () => {
       <TouchableOpacity style={styles.backButton} onPress={rotateCard}>
         <Text style={{ color: "white" }}>Flip Here</Text>
       </TouchableOpacity>
-
-
     </SafeAreaView>
   );
 };
