@@ -21,8 +21,8 @@ const IdCardModelScreen = () => {
     contactNumber: "123-456-7890",
     enrollmentDate: "01/01/2023",
     additionalFrontFields: [
-      { label: "Field1", value: "Value1" },
-      { label: "Field2", value: "Value2" },
+      { label: "name", value: "Value1" },
+      { label: "Department", value: "Value2" },
     ],
     additionalBackFields: [
       { label: "Field3", value: "Value3" },
@@ -46,7 +46,7 @@ const IdCardModelScreen = () => {
 
   const rotateInterpolate = rotateValue.interpolate({
     inputRange: [0, 0.5, 1],
-    outputRange: ["0deg", "180deg", "360deg"],
+    outputRange: ["1deg", "180deg", "360deg"],
   });
 
   const styles = StyleSheet.create({
@@ -103,8 +103,8 @@ const IdCardModelScreen = () => {
       marginBottom: SIZES.base,
     },
     qrCode: {
-      width: 100, // Adjust size as needed
-      height: 100, // Adjust size as needed
+      width: 110, // Adjust size as needed
+      height: 110, // Adjust size as needed
       marginBottom: SIZES.base,
     },
     backButton: {
@@ -114,6 +114,8 @@ const IdCardModelScreen = () => {
       borderRadius: SIZES.radius,
     },
   });
+
+
 
   const cardContent = (
     <>
@@ -157,7 +159,6 @@ const IdCardModelScreen = () => {
               {field.label}: {field.value}
             </Text>
           ))}
-          {/* Placeholder for QR code */}
         </>
       )}
     </>
@@ -184,7 +185,7 @@ const IdCardModelScreen = () => {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.backButton} onPress={rotateCard}>
-        <Text style={{ color: "white" }}>Toggle Card Side</Text>
+        <Text style={{ color: "white" }}>Flip Here</Text>
       </TouchableOpacity>
 
 

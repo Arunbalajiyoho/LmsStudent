@@ -22,8 +22,14 @@ import {
   DrawerItem,
 } from "@react-navigation/drawer";
 // import from expo vector icons
-import { AntDesign, Entypo, MaterialIcons, Feather } from "@expo/vector-icons";
-
+import {
+  AntDesign,
+  Entypo,
+  MaterialIcons,
+  Feather,
+  FontAwesome,
+  MaterialCommunityIcons, 
+} from "@expo/vector-icons";
 // import from Screens
 import {
   DashBoardScreen,
@@ -84,16 +90,21 @@ const StackNavigator = ({ navigation }) => {
         headerShown: false,
       }}
     >
-
-
-
-
-
-
-
-<Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
-
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="SplashScreen" component={SplashScreen} />
+
+      <Stack.Screen name="TicketsScreen" component={TicketsScreen} />
+
+      <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
+      <Stack.Screen
+        name="PendingTicketsScreen"
+        component={PendingTicketsScreen}
+      />
+
+      <Stack.Screen
+        name="CompletedTicketsScreen"
+        component={CompletedTicketsScreen}
+      />
 
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       <Stack.Screen
@@ -115,7 +126,6 @@ const StackNavigator = ({ navigation }) => {
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
       <Stack.Screen name="HelpCenterScreen" component={HelpCenterScreen} />
       <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
-      <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen
         name="PrivacyPolicyScreen"
         component={PrivacyPolicyScreen}
@@ -187,15 +197,7 @@ const StackNavigator = ({ navigation }) => {
         name="ResultDetailedScreen"
         component={ResultDetailedScreen}
       />
-      <Stack.Screen name="TicketsScreen" component={TicketsScreen} />
-      <Stack.Screen
-        name="PendingTicketsScreen"
-        component={PendingTicketsScreen}
-      />
-      <Stack.Screen
-        name="CompletedTicketsScreen"
-        component={CompletedTicketsScreen}
-      />
+
       <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
     </Stack.Navigator>
   );
@@ -316,7 +318,33 @@ const CustomDrawerContent = (props) => {
         onPress={() => props.navigation.navigate("AnswerPaperScreen")}
       />
 
+      <DrawerItem
+        label="Tickets"
+        icon={({ color, size }) => (
+          <FontAwesome name="ticket" size={24} color="black" />
+        )}
+        onPress={() => props.navigation.navigate("TicketsScreen")}
+      />
+
+      <DrawerItem
+        label="ID Card"
+        icon={({ color, size }) => (
+          <AntDesign name="idcard" size={24} color="black" />
+        )}
+        onPress={() => props.navigation.navigate("IdCardModelScreen")}
+      />
+
+      <DrawerItem
+        label="Certificate"
+        icon={({ color, size }) => (
+          <MaterialCommunityIcons name="certificate-outline" size={24} color="black" />
+        )}
+        onPress={() => props.navigation.navigate("CertificatesModelScreen")}
+      />
+     
+
       <View style={styles.dashedLine} />
+
     </DrawerContentScrollView>
   );
 };
@@ -389,6 +417,15 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+
+
+
+
+
+
+
+
 
 // // import from react
 // import React from "react";
