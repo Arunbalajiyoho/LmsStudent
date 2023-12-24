@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from "react-native";
-import { Calendar, Agenda } from "react-native-calendars";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Agenda, Calendar } from "react-native-calendars";
 import { COLORS, SIZES } from "../../constants/theme";
 
 const CalendarScreen = ({ navigation }) => {
   const [selectedDate, setSelectedDate] = useState(""); // State to keep track of selected date
 
-
+  
   const styles = StyleSheet.create({
 
     container: {
@@ -63,9 +63,10 @@ const CalendarScreen = ({ navigation }) => {
         <Text style={styles.subheading}>
           Keep track of important academic dates and events
         </Text>
-      </View>
-      <Calendar
-        theme={{
+      </View>      
+   
+      <Calendar                
+        theme={{  
           textSectionTitleColor: COLORS.darkBlue,
           selectedDayBackgroundColor: COLORS.darkBlue,
           selectedDayTextColor: COLORS.white,
@@ -73,10 +74,8 @@ const CalendarScreen = ({ navigation }) => {
           dayTextColor: COLORS.textColor,
           textDisabledColor: COLORS.gray,
           arrowColor: COLORS.darkBlue,
-
         }}
-
-        onDayPress={(day)  => setSelectedDate(day.dateString)}
+        onDayPress={(day)  => setSelectedDate(day.dateString)} 
       />
 
       {selectedDate ? (
@@ -96,6 +95,7 @@ const CalendarScreen = ({ navigation }) => {
           )}
         />
       ) : null}   
+
     </SafeAreaView>
   );
 };
