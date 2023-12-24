@@ -90,9 +90,18 @@ const StackNavigator = ({ navigation }) => {
         headerShown: false,
       }}
     >
+
+<Stack.Screen name="CalendarScreen" component={CalendarScreen} />
+
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
+
+      <Stack.Screen
+        name="ResultDetailedScreen"
+        component={ResultDetailedScreen}
+      />
+      <Stack.Screen name="ResultScreen" component={ResultScreen} />
+
       <Stack.Screen name="IdCardModelScreen" component={IdCardModelScreen} />
-      <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
 
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
 
@@ -192,11 +201,6 @@ const StackNavigator = ({ navigation }) => {
       <Stack.Screen
         name="EventDetailedScreen"
         component={EventDetailedScreen}
-      />
-      <Stack.Screen name="ResultScreen" component={ResultScreen} />
-      <Stack.Screen
-        name="ResultDetailedScreen"
-        component={ResultDetailedScreen}
       />
 
       <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
@@ -335,6 +339,28 @@ const CustomDrawerContent = (props) => {
         onPress={() => props.navigation.navigate("IdCardModelScreen")}
       />
 
+      <DrawerItem
+        label="Certificate"
+        icon={({ color, size }) => (
+          <MaterialCommunityIcons
+            name="certificate-outline"
+            size={24}
+            color="black"
+          />
+        )}
+        onPress={() => props.navigation.navigate("CertificatesModelScreen")}
+      />
+      <DrawerItem
+        label="Certificate"
+        icon={({ color, size }) => (
+          <MaterialCommunityIcons
+            name="certificate-outline"
+            size={24}
+            color="black"
+          />
+        )}
+        onPress={() => props.navigation.navigate("CertificatesModelScreen")}
+      />
       <DrawerItem
         label="Certificate"
         icon={({ color, size }) => (

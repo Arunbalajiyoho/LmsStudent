@@ -1,36 +1,70 @@
-import React from "react";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
-import { Calendar } from "react-native-calendars";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from "react-native";
+import { Calendar, Agenda } from "react-native-calendars";
 import { COLORS, SIZES } from "../../constants/theme";
 
+const CalendarScreen = ({ navigation }) => {
+  const [selectedDate, setSelectedDate] = useState(""); // State to keep track of selected date
 
-const CalendarScreen = () => {
-   
+
   const styles = StyleSheet.create({
+
     container: {
+
       flex: 1,
       backgroundColor: COLORS.background,
-      padding: SIZES.padding,
+      paddingHorizontal: SIZES.padding,
+      paddingVertical: SIZES.radius,
+      justifyContent:"center",
+
     },
     header: {
+       
       marginBottom: SIZES.padding,
+
     },
     heading: {
       fontSize: SIZES.h2,
       fontWeight: "bold",
       color: COLORS.textColor,
     },
+    subheading: {
+      fontSize: SIZES.body3,
+      color: COLORS.gray,
+    },
+
+    agenda: {
+      marginTop: SIZES.radius,
+    },
+
+    dayContainer: {
+      backgroundColor: COLORS.cardBackground,
+      padding: SIZES.radius,
+      borderRadius: SIZES.radius,
+      marginBottom: SIZES.base,
+    },
+    dayText: {
+      fontSize: SIZES.body2,
+      color: COLORS.textColor,
+    },
   });
 
- 
+  // Placeholder data for demonstration
+  const events = {
+    "2023-12-20": [{ name: "Assignment Due", time: "09:00 AM", description: "Submit project report" }],
+    "2023-12-25": [{ name: "Holiday", time: "All day", description: "Christmas break" }],
+
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.heading}>Calendar</Text>
+        <Text style={styles.heading}>Academic Calendar</Text>
+        <Text style={styles.subheading}>
+          Keep track of important academic dates and events
+        </Text>
       </View>
       <Calendar
-        // Customize the calendar as needed
         theme={{
           textSectionTitleColor: COLORS.darkBlue,
           selectedDayBackgroundColor: COLORS.darkBlue,
@@ -39,12 +73,31 @@ const CalendarScreen = () => {
           dayTextColor: COLORS.textColor,
           textDisabledColor: COLORS.gray,
           arrowColor: COLORS.darkBlue,
+
         }}
+
+        onDayPress={(day)  => setSelectedDate(day.dateString)}
       />
+
+      {selectedDate ? (
+        <Agenda
+          style={styles.agenda}
+          items={events} // Replace with your data source
+          selected={selectedDate}
+          renderItem={(item) => (
+            <TouchableOpacity
+              style={styles.dayContainer}
+              onPress={() => console.log("Event clicked:", item)}
+            >
+              <Text style={styles.dayText}>{item.name}</Text>
+              <Text style={styles.dayText}>{item.time}</Text>
+              <Text style={styles.dayText}>{item.description}</Text>
+            </TouchableOpacity>
+          )}
+        />
+      ) : null}   
     </SafeAreaView>
   );
 };
 
-
-
-export default CalendarScreen; 
+export default CalendarScreen;

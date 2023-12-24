@@ -1,4 +1,6 @@
+// import from reactr
 import React, { useState, useRef } from "react";
+// import from react native
 import {
   View,
   Text,
@@ -8,13 +10,18 @@ import {
   Animated,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+// import from constants
 import { SIZES, COLORS } from "../../constants/theme";
-import { useStateContext } from "../../context/StateContext/StateContext";
 import Colors from "../../constants/Colors";
-import { FontAwesome5 } from "@expo/vector-icons";
+// import from context
+import { useStateContext } from "../../context/StateContext/StateContext";
+
 
 
 const IdCardModelScreen = ({navigation}) => {
+
+
+  
   const studentData = {
     name: "John Doe",
     course: "Computer Science",
@@ -30,6 +37,7 @@ const IdCardModelScreen = ({navigation}) => {
       { label: "Dept", value: "Value4" },
     ],
   };
+
 
   const { colors, isDarkMode } = useStateContext();
   const [showBack, setShowBack] = useState(false);
@@ -117,6 +125,8 @@ const IdCardModelScreen = ({navigation}) => {
     },
   });
 
+
+  
   const cardContent = (
     <>
       <Text style={styles.title}>

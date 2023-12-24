@@ -1,5 +1,3 @@
-
-
 const accordian = [
   {
     id: 1,
@@ -52,6 +50,7 @@ const upcomingExam = [
   },
 ];
 
+
 const completed = [
   {
     id: 1,
@@ -84,7 +83,6 @@ const examHistory = [
   },
   // Add more exam history entries as needed
 ];
-
 
 const screens = [
   {
@@ -143,7 +141,6 @@ const notifications = [
 ];
 
 
-
  const payment = [
   {
   id:1,
@@ -167,7 +164,6 @@ const notifications = [
    },
 ];
 
-
  const completedclass = [
   {
     id: 1,
@@ -185,7 +181,6 @@ const notifications = [
     inst:"Aravindh"
   },
 ];
-
 
 const  events = [
   {
@@ -208,6 +203,7 @@ const  events = [
   
 ];
 
+
   // Dummy certificate data
   const certificates = [
     {
@@ -221,9 +217,6 @@ const  events = [
     },
   
   ];
-
-
-
 
   
 const studentDetails = [
@@ -260,6 +253,24 @@ const paymentgateway =[
 ]
 
 
+const studentData = [
+
+{
+  name: "John Doe",
+  course: "Computer Science",
+  studentID: "YT0502",
+  contactNumber: "6380730461",
+  enrollmentDate: "01/01/2000",
+  additionalFrontFields: [
+    { label: "name", value: "Value1" },
+    { label: "Department", value: "Value2" },
+  ],
+  additionalBackFields: [
+    { label: "Dept", value: "Value3" },
+    { label: "Dept", value: "Value4" },
+  ],
+}
+]
 
 
 
@@ -277,4 +288,5 @@ export default {
   certificates,
   studentDetails,
   paymentgateway,
+  studentData,
 };

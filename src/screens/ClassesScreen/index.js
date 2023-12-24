@@ -27,15 +27,14 @@ const ClassesScreen = ({ navigation }) => {
 
   // function for rendering screens
   const renderScreen = React.useMemo(() => {
-    switch (activeTab) {
-      case "Upcoming Classes":
-        return <UpcomingClassScreen />;
-      case "Completed Classes":
-        return <CompletedClassScreen />;
-      case "Exam Classes":
-        return <ClassHistoryScreen />;
-      default:
-        return null;
+    if (activeTab === "Upcoming Classes") {
+      return <UpcomingClassScreen />;
+    } else if (activeTab === "Completed Classes") {
+      return <CompletedClassScreen />;
+    } else if (activeTab === "Exam Classes") {
+      return <ClassHistoryScreen />;
+    } else {
+      return null;
     }
   }, [activeTab]); // Re-render only when activeTab changes
 

@@ -76,6 +76,9 @@ const LibraryDetailedScreen = ({ route }) => {
       
 
       </ScrollView>
+
+     {/* npm command for number */}
+
     </SafeAreaView>
   );
 };

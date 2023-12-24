@@ -68,6 +68,12 @@ const CommunityScreen = ({ navigation }) => {
     }
   };
 
+    // state for clear messages
+    const clearMessages = () => {
+      setMessages([]);
+      saveMessages([]); // Clear messages in SecureStore
+    };
+
   // stste for get time
   const getCurrentTime = () => {
     const now = new Date();
