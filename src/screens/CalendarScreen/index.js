@@ -3,10 +3,10 @@ import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-na
 import { Agenda, Calendar } from "react-native-calendars";
 import { COLORS, SIZES } from "../../constants/theme";
 
-const CalendarScreen = ({ navigation }) => {
+ const CalendarScreen = ({ navigation }) => {
   const [selectedDate, setSelectedDate] = useState(""); // State to keep track of selected date
 
-  
+
   const styles = StyleSheet.create({
 
     container: {
@@ -53,7 +53,7 @@ const CalendarScreen = ({ navigation }) => {
   const events = {
     "2023-12-20": [{ name: "Assignment Due", time: "09:00 AM", description: "Submit project report" }],
     "2023-12-25": [{ name: "Holiday", time: "All day", description: "Christmas break" }],
-
+    //   Add more Events 
   };
 
   return (
@@ -77,7 +77,7 @@ const CalendarScreen = ({ navigation }) => {
         }}
         onDayPress={(day)  => setSelectedDate(day.dateString)} 
       />
-
+ 
       {selectedDate ? (
         <Agenda
           style={styles.agenda}
@@ -93,8 +93,10 @@ const CalendarScreen = ({ navigation }) => {
               <Text style={styles.dayText}>{item.description}</Text>
             </TouchableOpacity>
           )}
-        />
+        />         
       ) : null}   
+           
+
 
     </SafeAreaView>
   );
