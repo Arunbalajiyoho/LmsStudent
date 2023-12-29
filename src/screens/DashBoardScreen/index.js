@@ -36,9 +36,12 @@ import MyCalendar from "../../components/MyCalendar";
 import Animated from "react-native-reanimated";
 import CourseCard from "../../components/CourseCard ";
 import dummyData from "../../components/dummyData";
+import DrawerSceneWrapper from "../../components/DrawerSceneWrapper";
+
 
 
 const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
+  const {openDrawer} = navigation;
   // for using colors from context
   const { colors, isDarkMode } = useStateContext();
 
@@ -206,12 +209,8 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
   );
 
   return (
-    <Animated.View
-      style={{
-        flex: 1,
-        ...drawerAnimationStyle,
-      }}
-    >
+   
+    <DrawerSceneWrapper>
       <SafeAreaView style={styles.grandParent}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.name}>
@@ -378,7 +377,8 @@ const DashBoardScreen = ({ navigation, drawerAnimationStyle }) => {
 
         </ScrollView>
       </SafeAreaView>
-    </Animated.View>
+      </DrawerSceneWrapper>
+
   );
 };
 

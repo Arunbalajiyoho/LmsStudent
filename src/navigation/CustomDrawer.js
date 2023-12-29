@@ -68,7 +68,9 @@ import {
   ProfileScreen,
   SplashScreen,
 } from "../screens";
+
 import dummyData from "../components/dummyData";
+
 
 const Stack = createNativeStackNavigator(); // Correct variable name
 
@@ -110,6 +112,7 @@ const CustomDrawerContent = ({ navigation }) => {
   );
 };
 
+
 const CustomDrawer = () => {
   // const [progress, setProgress] = React.useState(new Animated.Value(0));
 
@@ -148,9 +151,12 @@ const CustomDrawer = () => {
         }}
       >
         <Drawer.Screen name="DashboardScreen">
-          {(props) => <DashBoardScreen {...props}
-          //  drawerAnimationStyle={animatedStyle} 
-           />}
+          {(props) => (
+            <DashBoardScreen
+              {...props}
+              //  drawerAnimationStyle={animatedStyle}
+            />
+          )}
         </Drawer.Screen>
       </Drawer.Navigator>
     </View>

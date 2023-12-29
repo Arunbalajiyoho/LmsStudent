@@ -18,8 +18,10 @@ import ClassHistoryScreen from "../ClassHistoryScreen";
 
 // import from context
 import { useStateContext } from "../../context/StateContext/StateContext";
-
+import DrawerSceneWrapper from "../../components/DrawerSceneWrapper";
 const ClassesScreen = ({ navigation }) => {
+
+  const {openDrawer} = navigation;
   // state for darkmode
   const { colors,isDarkMode } = useStateContext();
   // state for tabs
@@ -80,6 +82,7 @@ const ClassesScreen = ({ navigation }) => {
   });
 
   return (
+    <DrawerSceneWrapper>
     <SafeAreaView style={styles.grandParent}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.back}>
@@ -144,6 +147,7 @@ const ClassesScreen = ({ navigation }) => {
            {renderScreen}
 
     </SafeAreaView>
+    </DrawerSceneWrapper>
   );
 };
 
