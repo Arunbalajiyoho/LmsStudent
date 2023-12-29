@@ -25,6 +25,7 @@ import {
   FontAwesome,
   FontAwesome5,
 } from "@expo/vector-icons";
+import BottomTabs from "../../BottomTabs";
 
 const SetNewPasswordScreen = ({ navigation }) => {
   // for colors
@@ -234,7 +235,9 @@ const SetNewPasswordScreen = ({ navigation }) => {
 
 
           <View style={{ alignItems: "center", marginTop: 30 }}>
-            <TouchableOpacity   onPress={handleContinue}
+            <TouchableOpacity 
+              // onPress={handleContinue}
+              onPress={navigation.navigate(BottomTabs)}
               style={{
                 backgroundColor: COLORS.darkBlue,
 
